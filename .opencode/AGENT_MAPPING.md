@@ -99,36 +99,21 @@ All agents located in `.opencode/agent/`:
 - Activates: Frontend, Backend, Security, DevOps personas as needed
 - Multi-domain coordination makes static agent assignment inappropriate
 
-## Changes from Previous Mapping
+## Agent Mapping
 
-**Corrected agent assignments** (removed non-existent agents):
-- analyze: ~~analyzer~~ → **code-review** ✓
-- build: ~~build~~ → **devops-architect** ✓
-- cleanup: ~~analyzer~~ → **refactoring-expert** ✓
-- explain: ~~analyzer~~ → **learning-guide** ✓
-- git: ~~general-purpose~~ → **devops-architect** ✓
-- help: ~~general-purpose~~ → **technical-writer** ✓
-- implement: ~~build~~ → **(no agent)** ✓
-- improve: ~~analyzer~~ → **refactoring-expert** ✓
-- reflect: ~~general-purpose~~ → **context-refinement** ✓
-- save: ~~general-purpose~~ → **logging** ✓
-- task: ~~task~~ → **system-architect** ✓
-- test: ~~test~~ → **quality-engineer** ✓
-
-**Maintained correct assignments**:
-- brainstorm → requirements-analyst ✓
-- business-panel → business-panel-experts ✓
-- design → system-architect ✓
-- document → technical-writer ✓
-- estimate → requirements-analyst ✓
-- index → technical-writer ✓
-- load → context-gathering ✓
-- research → deep-research-agent ✓
-- select-tool → system-architect ✓
-- spawn → system-architect ✓
-- spec-panel → requirements-analyst ✓
-- troubleshoot → root-cause-analyst ✓
-- workflow → requirements-analyst ✓
+- brainstorm → requirements-analyst
+- business-panel → business-panel-experts
+- design → system-architect
+- document → technical-writer
+- estimate → requirements-analyst
+- index → technical-writer
+- load → context-gathering
+- research → deep-research-agent
+- select-tool → system-architect
+- spawn → system-architect
+- spec-panel → requirements-analyst
+- troubleshoot → root-cause-analyst
+- workflow → requirements-analyst
 
 ## Verification
 
