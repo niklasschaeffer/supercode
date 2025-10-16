@@ -1,7 +1,7 @@
 ---
 name: task
 description: Execute complex tasks with intelligent workflow management and delegation
-agent: task
+agent: system-architect
 model: glm-4.6
 ---
 

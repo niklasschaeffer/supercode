@@ -1,7 +1,6 @@
 ---
 name: implement
 description: Feature and code implementation with intelligent persona activation and MCP integration
-agent: build
 model: glm-4.6
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: build
 description: Build, compile, and package projects with intelligent error handling and optimization
-agent: build
+agent: devops-architect
 model: glm-4.6
 ---
 

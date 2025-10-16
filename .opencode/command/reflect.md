@@ -1,7 +1,7 @@
 ---
 name: reflect
 description: Task reflection and validation using Serena MCP analysis capabilities
-agent: general-purpose
+agent: context-refinement
 ---
 
 # Task Reflection and Validation: $ARGUMENTS

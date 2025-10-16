@@ -1,7 +1,7 @@
 ---
 name: cleanup
 description: Systematically clean up code, remove dead code, and optimize project structure
-agent: analyzer
+agent: refactoring-expert
 model: glm-4.6
 ---
 

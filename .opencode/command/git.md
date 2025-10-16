@@ -1,7 +1,7 @@
 ---
 name: git
 description: Git/Gitea operations with intelligent commit messages and workflow optimization
-agent: general-purpose
+agent: devops-architect
 ---
 
 # Git Operation: $ARGUMENTS

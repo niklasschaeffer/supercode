@@ -1,7 +1,7 @@
 ---
 name: help
 description: List all available / commands and their functionality
-agent: general-purpose
+agent: technical-writer
 ---
 
 # SuperCode Command Reference

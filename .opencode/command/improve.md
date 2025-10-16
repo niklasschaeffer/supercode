@@ -1,7 +1,7 @@
 ---
 name: improve
 description: Apply systematic improvements to code quality, performance, and maintainability
-agent: analyzer
+agent: refactoring-expert
 model: glm-4.6
 ---
 

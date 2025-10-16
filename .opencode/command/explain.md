@@ -1,7 +1,7 @@
 ---
 name: explain
 description: Provide clear explanations of code, concepts, and system behavior with educational clarity
-agent: analyzer
+agent: learning-guide
 ---
 
 # Explanation Request: $ARGUMENTS

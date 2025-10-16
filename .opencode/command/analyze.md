@@ -1,7 +1,7 @@
 ---
 name: analyze
 description: Comprehensive code analysis across quality, security, performance, and architecture domains
-agent: analyzer
+agent: code-review
 ---
 
 # Code Analysis: $ARGUMENTS
