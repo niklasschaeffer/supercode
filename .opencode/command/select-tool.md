@@ -1,10 +1,10 @@
 ---
 name: select-tool
 description: "Intelligent MCP tool selection based on complexity scoring and operation analysis"
+agent: system-architect
 category: special
 complexity: high
 mcp-servers: [serena, morphllm]
-personas: []
 ---
 
 # /select-tool - Intelligent MCP Tool Selection

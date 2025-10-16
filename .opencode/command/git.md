@@ -1,84 +1,257 @@
 ---
 name: git
-description: "Git/Gitea operations with intelligent commit messages and workflow optimization"
-category: utility
-complexity: basic
-mcp-servers: [gitea]
-personas: []
+description: Git/Gitea operations with intelligent commit messages and workflow optimization
+agent: general-purpose
 ---
 
-# /sc:git - Git/Gitea Operations
+# Git Operation: $ARGUMENTS
 
-## Triggers
-- Git repository operations: status, add, commit, push, pull, branch
-- Need for intelligent commit message generation
-- Repository workflow optimization requests
-- Branch management and merge operations
-- Gitea operations: create_issue, create_issue_comment, create_pull_request, create_branch, add_issue_labels, list_my_repos, list_repo_issues, list_repo_pull_requests
+You are performing Git operations with intelligent automation, conventional commit messages, and workflow best practices.
 
-## Usage
+## Repository Context
+
+**Current Status**:
+!`git status --short`
+
+**Current Branch**:
+!`git branch --show-current`
+
+**Recent Commits**:
+!`git log --oneline -5`
+
+**Remote Status**:
+!`git remote -v`
+
+## Git Operation Request
+
+**Operation**: $ARGUMENTS
+
+## Git Protocol
+
+Execute Git operations with intelligent automation and best practices:
+
+### 1. ANALYZE - Repository State
+
+**Status Analysis**:
+- Review working directory changes
+- Identify staged and unstaged files
+- Check for untracked files
+- Assess merge conflicts or issues
+
+**Branch Context**:
+- Verify current branch
+- Check branch relationship to remote
+- Understand branch naming convention
+- Review recent commit history
+
+**Safety Checks**:
+- Ensure operation is appropriate for current state
+- Verify no uncommitted critical changes
+- Check for potential conflicts
+- Assess operation reversibility
+
+### 2. VALIDATE - Operation Appropriateness
+
+**Pre-Operation Validation**:
+- Confirm operation matches current Git state
+- Verify branch is appropriate for operation
+- Check for blocking issues (conflicts, detached HEAD)
+- Ensure remote is configured for push/pull operations
+
+**Risk Assessment**:
+- Identify potentially destructive operations
+- Check if operation requires confirmation
+- Assess impact on other branches
+- Verify backup or rollback options
+
+### 3. EXECUTE - Smart Git Operations
+
+**Intelligent Commit Messages**:
 ```
-/sc:git [operation] [args] [--smart-commit] [--interactive]
+Format: <type>(<scope>): <subject>
+
+Types:
+- feat: New feature
+- fix: Bug fix
+- docs: Documentation changes
+- style: Formatting, missing semicolons, etc.
+- refactor: Code restructuring without feature changes
+- perf: Performance improvements
+- test: Adding or updating tests
+- chore: Maintenance tasks, dependencies
+
+Example: feat(auth): add JWT token validation
 ```
 
-## Behavioral Flow
-1. **Analyze**: Check repository state and working directory changes
-2. **Validate**: Ensure operation is appropriate for current Git context
-3. **Execute**: Run Git command with intelligent automation
-4. **Optimize**: Apply smart commit messages and workflow patterns
-5. **Report**: Provide status and next steps guidance
+**Branch Naming Conventions**:
+```
+Format: <type>/<description>
 
-Key behaviors:
-- Generate conventional commit messages based on change analysis
-- Apply consistent branch naming conventions
-- Handle merge conflicts with guided resolution
-- Provide clear status summaries and workflow recommendations
+Types:
+- feature/: New features
+- fix/: Bug fixes
+- hotfix/: Urgent production fixes
+- refactor/: Code restructuring
+- docs/: Documentation updates
 
-# MCP Integration
-- **Gitea MCP**: Mandatory Integration for Issue tracking and Project management
+Example: feature/user-authentication
+```
 
-## Tool Coordination
-- **Bash**: Git command execution and repository operations
-- **Read**: Repository state analysis and configuration review
-- **Grep**: Log parsing and status analysis
-- **Write**: Commit message generation and documentation
+**Common Operations**:
 
-## Key Patterns
-- **Smart Commits**: Analyze changes → generate conventional commit message
-- **Status Analysis**: Repository state → actionable recommendations
-- **Branch Strategy**: Consistent naming and workflow enforcement
-- **Error Recovery**: Conflict resolution and state restoration guidance
+**Status Analysis**:
+```bash
+git status
+→ Analyze changes with actionable recommendations
+→ Suggest next steps based on current state
+```
 
-## Examples
+**Smart Commit**:
+```bash
+git add [files]
+git commit -m "conventional message"
+→ Generate conventional commit message from changes
+→ Apply best practices and proper formatting
+```
+
+**Branch Operations**:
+```bash
+git checkout -b feature/new-feature
+git merge feature-branch
+→ Apply consistent naming conventions
+→ Provide merge conflict guidance if needed
+```
+
+**Remote Operations**:
+```bash
+git pull origin main
+git push origin feature-branch
+→ Ensure remote is up-to-date
+→ Provide push guidance and PR next steps
+```
+
+### 4. OPTIMIZE - Workflow Enhancement
+
+**Commit Message Generation**:
+- Analyze changed files for context
+- Determine appropriate commit type
+- Generate descriptive subject line
+- Add body with details if significant changes
+
+**Workflow Recommendations**:
+- Suggest branch strategy improvements
+- Recommend commit frequency adjustments
+- Provide rebase vs merge guidance
+- Offer PR and code review suggestions
+
+**Best Practices**:
+- Small, focused commits
+- Descriptive commit messages
+- Frequent integration with main branch
+- Clean commit history
+
+### 5. REPORT - Status and Next Steps
+
+**Operation Result**:
+- Confirm successful execution
+- Display relevant Git output
+- Highlight any warnings or issues
+- Provide context for changes
+
+**Next Steps Guidance**:
+- Suggest logical next operations
+- Provide PR creation guidance if appropriate
+- Recommend testing or validation steps
+- Offer workflow optimization tips
+
+## Gitea MCP Integration
+
+**Available Gitea Operations** (when Gitea MCP is configured):
+
+**Issue Management**:
+- `create_issue`: Create new issue with title and description
+- `create_issue_comment`: Add comments to existing issues
+- `add_issue_labels`: Apply labels for categorization
+- `list_repo_issues`: View all repository issues
+- `get_issue_by_index`: Retrieve specific issue details
+
+**Pull Request Operations**:
+- `create_pull_request`: Create PR with title, description, base/head branches
+- `list_repo_pull_requests`: View all repository PRs
+- `get_pull_request_by_index`: Retrieve specific PR details
+
+**Repository Operations**:
+- `create_branch`: Create new branches
+- `list_branches`: View all repository branches
+- `list_my_repos`: List accessible repositories
+
+## Operation Examples
 
 ### Smart Status Analysis
 ```
-/sc:git status
-# Analyzes repository state with change summary
-# Provides next steps and workflow recommendations
+/git status
+→ Analyzes: 5 modified files, 2 untracked
+→ Recommendation: Stage authentication changes, commit with "feat(auth): add login validation"
+→ Next steps: Run tests, then push to feature branch
 ```
 
 ### Intelligent Commit
 ```
-/sc:git commit --smart-commit
-# Generates conventional commit message from change analysis
-# Applies best practices and consistent formatting
+/git commit --smart-commit
+→ Analysis: Modified auth.js, login.js, added tests
+→ Generated message: "feat(auth): implement JWT authentication with refresh tokens"
+→ Body: "- Add JWT token generation and validation
+         - Implement refresh token rotation
+         - Add comprehensive test coverage"
 ```
 
-### Interactive Operations
+### Branch Creation with Convention
 ```
-/sc:git merge feature-branch --interactive
-# Guided merge with conflict resolution assistance
+/git checkout -b feature/payment-integration
+→ Creates feature branch with proper naming convention
+→ Sets up tracking with remote
+→ Provides integration guidelines
 ```
 
-## Boundaries
+### Merge with Conflict Guidance
+```
+/git merge feature-branch
+→ Detects conflicts in auth.js
+→ Provides conflict resolution guidance:
+  1. Open conflicting files
+  2. Resolve conflicts (keep incoming changes for token logic)
+  3. Stage resolved files
+  4. Complete merge commit
+```
 
-**Will:**
-- Execute Git operations with intelligent automation
-- Generate conventional commit messages from change analysis
-- Provide workflow optimization and best practice guidance
+### Push with PR Guidance
+```
+/git push origin feature/user-auth
+→ Successfully pushes branch
+→ Provides PR creation command or link
+→ Suggests PR description based on commits
+```
 
-**Will Not:**
-- Modify repository configuration without explicit authorization
-- Execute destructive operations without confirmation
-- Handle complex merges requiring manual intervention
+## Quality Standards
+
+**Commit Quality**:
+- Conventional commit format
+- Clear, descriptive messages
+- Focused, atomic changes
+- Proper type and scope
+
+**Branch Management**:
+- Consistent naming conventions
+- Appropriate branch types
+- Clean, logical structure
+- Regular synchronization with main
+
+**Workflow Efficiency**:
+- Frequent, focused commits
+- Regular integration
+- Clean commit history
+- Effective collaboration patterns
+
+---
+
+**Execute Git operation now with intelligent automation and best practices.**

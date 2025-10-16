@@ -1,92 +1,204 @@
 ---
 name: explain
-description: "Provide clear explanations of code, concepts, and system behavior with educational clarity"
-category: workflow
-complexity: standard
-mcp-servers: [sequential, context7]
-personas: [educator, architect, security]
+description: Provide clear explanations of code, concepts, and system behavior with educational clarity
+agent: analyzer
 ---
 
-# /sc:explain - Code and Concept Explanation
+# Explanation Request: $ARGUMENTS
 
-## Triggers
-- Code understanding and documentation requests for complex functionality
-- System behavior explanation needs for architectural components
-- Educational content generation for knowledge transfer
-- Framework-specific concept clarification requirements
+You are providing clear, educational explanations to enhance understanding of code, concepts, or system behavior.
 
-## Usage
+## Project Context
+
+**Project Structure**:
+@AGENTS.md
+
+**Project Overview**:
+@README.md
+
+**Target Code** (if file specified):
+@$ARGUMENTS
+
+## Explanation Request
+
+**Topic**: $ARGUMENTS
+
+## Explanation Protocol
+
+Deliver comprehensive explanations with educational clarity:
+
+### 1. ANALYZE - Target Understanding
+
+Examine the target for thorough comprehension:
+
+- **Code Analysis**: If explaining code, understand implementation details
+- **Concept Research**: If explaining concepts, gather authoritative information
+- **System Mapping**: If explaining systems, understand architecture and flow
+- **Context Discovery**: Identify relevant background and dependencies
+
+**Analysis Techniques**:
+- Static code analysis for implementation details
+- Control flow and data flow analysis
+- Dependency and relationship mapping
+- Framework/library pattern recognition
+
+### 2. ASSESS - Audience and Depth
+
+Determine appropriate explanation approach:
+
+**Audience Levels**:
+- **Basic** (--level basic): Beginners, high-level overview, minimal jargon
+- **Intermediate** (--level intermediate): Some background, moderate detail
+- **Advanced** (--level advanced): Experts, deep technical details
+
+**Explanation Formats**:
+- **Text** (--format text): Written explanation with examples
+- **Examples** (--format examples): Code examples with annotations
+- **Interactive** (--format interactive): Progressive exploration with questions
+
+### 3. STRUCTURE - Explanation Sequence
+
+Plan logical explanation flow:
+
+**Progressive Complexity**:
+1. **Overview**: What is it and why does it exist?
+2. **Core Concepts**: Essential understanding foundations
+3. **Detailed Mechanics**: How it works internally
+4. **Practical Application**: Real-world usage patterns
+5. **Advanced Topics**: Edge cases and optimization
+
+**Logical Flow Principles**:
+- Start with familiar concepts
+- Build incrementally on previous knowledge
+- Use analogies for complex ideas
+- Provide concrete examples early
+
+### 4. GENERATE - Clear Explanation
+
+Create comprehensive educational content:
+
+#### Explanation Components
+
+**What It Is**:
+- Clear definition without jargon
+- Purpose and use case
+- Context within larger system
+
+**How It Works**:
+- Step-by-step process breakdown
+- Visual diagrams (ASCII art when helpful)
+- Control flow and data flow
+- Key mechanisms explained
+
+**Why It Matters**:
+- Benefits and trade-offs
+- Common use cases
+- Best practices
+- Anti-patterns to avoid
+
+**Practical Examples**:
 ```
-/sc:explain [target] [--level basic|intermediate|advanced] [--format text|examples|interactive] [--context domain]
+// Example with detailed annotations
+// Explain each significant line
+// Show input/output examples
+// Demonstrate edge cases
 ```
 
-## Behavioral Flow
-1. **Analyze**: Examine target code, concept, or system for comprehensive understanding
-2. **Assess**: Determine audience level and appropriate explanation depth and format
-3. **Structure**: Plan explanation sequence with progressive complexity and logical flow
-4. **Generate**: Create clear explanations with examples, diagrams, and interactive elements
-5. **Validate**: Verify explanation accuracy and educational effectiveness
+**Common Pitfalls**:
+- Mistakes to avoid
+- Debugging tips
+- Performance considerations
+- Security implications
 
-Key behaviors:
-- Multi-persona coordination for domain expertise (educator, architect, security)
-- Framework-specific explanations via Context7 integration
-- Systematic analysis via Sequential MCP for complex concept breakdown
-- Adaptive explanation depth based on audience and complexity
+#### Educational Enhancements
+
+**Analogies**: Use real-world comparisons for abstract concepts
+
+**Diagrams**: Create ASCII diagrams for visual learners
+```
+┌──────────┐     ┌──────────┐
+│  Client  │────▶│  Server  │
+└──────────┘     └──────────┘
+```
+
+**Progressive Disclosure**: Start simple, layer in complexity
+
+**Interactive Elements**: Ask questions to check understanding
+
+### 5. VALIDATE - Accuracy and Effectiveness
+
+Ensure explanation quality:
+
+**Technical Accuracy**:
+- Verify implementation details are correct
+- Check framework/library versions
+- Validate best practices
+- Use official documentation where applicable
+
+**Educational Effectiveness**:
+- Clarity: Can audience understand?
+- Completeness: Are key points covered?
+- Accuracy: Is information correct?
+- Usefulness: Does it help the user?
+
+## Domain-Specific Explanations
+
+**Code Explanation**:
+- Read target file(s)
+- Explain purpose, structure, and key logic
+- Highlight important patterns and techniques
+- Provide usage examples
+
+**Framework Concepts** (auto-activate Context7):
+- Fetch official documentation patterns
+- Explain framework-specific approaches
+- Show canonical examples
+- Reference best practices
+
+**System Architecture**:
+- Map component relationships
+- Explain data flow and control flow
+- Discuss scaling and reliability
+- Cover deployment and operations
+
+**Security Concepts**:
+- Explain threat models
+- Describe security mechanisms
+- Provide secure implementation patterns
+- Warn about common vulnerabilities
+
+## Multi-Persona Coordination
+
+Activate relevant expertise:
+- **Educator**: Learning-optimized structure and progressive complexity
+- **Architect**: System design and architectural patterns
+- **Security**: Security best practices and threat awareness
 
 ## MCP Integration
-- **Sequential MCP**: Auto-activated for complex multi-component analysis and structured reasoning
-- **Context7 MCP**: Framework documentation and official pattern explanations
-- **Persona Coordination**: Educator (learning), Architect (systems), Security (practices)
 
-## Tool Coordination
-- **Read/Grep/Glob**: Code analysis and pattern identification for explanation content
-- **TodoWrite**: Progress tracking for complex multi-part explanations
-- **Task**: Delegation for comprehensive explanation workflows requiring systematic breakdown
+- **Sequential MCP**: Complex multi-component breakdown and structured reasoning
+- **Context7 MCP**: Official framework documentation and authoritative patterns
 
-## Key Patterns
-- **Progressive Learning**: Basic concepts → intermediate details → advanced implementation
-- **Framework Integration**: Context7 documentation → accurate official patterns and practices
-- **Multi-Domain Analysis**: Technical accuracy + educational clarity + security awareness
-- **Interactive Explanation**: Static content → examples → interactive exploration
+## Explanation Levels
 
-## Examples
+**Basic**:
+- High-level overview
+- Minimal technical jargon
+- Focus on "what" and "why"
+- Simple analogies
 
-### Basic Code Explanation
-```
-/sc:explain authentication.js --level basic
-# Clear explanation with practical examples for beginners
-# Educator persona provides learning-optimized structure
-```
+**Intermediate**:
+- Moderate technical detail
+- Some implementation specifics
+- Include "how" it works
+- Code examples
 
-### Framework Concept Explanation
-```
-/sc:explain react-hooks --level intermediate --context react
-# Context7 integration for official React documentation patterns
-# Structured explanation with progressive complexity
-```
+**Advanced**:
+- Deep technical detail
+- Implementation intricacies
+- Performance characteristics
+- Edge cases and optimization
 
-### System Architecture Explanation
-```
-/sc:explain microservices-system --level advanced --format interactive
-# Architect persona explains system design and patterns
-# Interactive exploration with Sequential analysis breakdown
-```
+---
 
-### Security Concept Explanation
-```
-/sc:explain jwt-authentication --context security --level basic
-# Security persona explains authentication concepts and best practices
-# Framework-agnostic security principles with practical examples
-```
-
-## Boundaries
-
-**Will:**
-- Provide clear, comprehensive explanations with educational clarity
-- Auto-activate relevant personas for domain expertise and accurate analysis
-- Generate framework-specific explanations with official documentation integration
-
-**Will Not:**
-- Generate explanations without thorough analysis and accuracy verification
-- Override project-specific documentation standards or reveal sensitive details
-- Bypass established explanation validation or educational quality requirements
+**Provide clear, comprehensive explanation now with educational clarity and progressive complexity.**

@@ -1,10 +1,10 @@
 ---
 name: workflow
 description: "Generate structured implementation workflows from PRDs and feature requirements"
+agent: requirements-analyst
 category: orchestration
 complexity: advanced
 mcp-servers: [sequential, context7, magic, playwright, morphllm, serena]
-personas: [architect, analyzer, frontend, backend, security, devops, project-manager]
 ---
 
 # /sc:workflow - Implementation Workflow Generator

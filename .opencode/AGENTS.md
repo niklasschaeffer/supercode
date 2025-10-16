@@ -1,13 +1,14 @@
 # SuperCode Entry Point
 
 This file serves as the entry point for the SuperCode framework.
-You can add your own custom instructions and configurations here.
-
 The SuperCode framework components will be automatically imported below.
 
 # ===================================================
 # SuperCode Framework Components
 # ===================================================
+
+# Agent Mappings
+@AGENT_MAPPING.md
 
 # Core Framework
 @BUSINESS_PANEL_EXAMPLES.md

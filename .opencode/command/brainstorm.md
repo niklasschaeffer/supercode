@@ -1,100 +1,402 @@
 ---
 name: brainstorm
-description: "Interactive requirements discovery through Socratic dialogue and systematic exploration"
-category: orchestration
-complexity: advanced
-mcp-servers: [sequential, context7, magic, playwright, morphllm, serena]
-personas: [architect, analyzer, frontend, backend, security, devops, project-manager]
+description: Interactive requirements discovery through Socratic dialogue and systematic exploration
+agent: requirements-analyst
+model: claude-sonnet-4-5
 ---
 
-# /brainstorm - Interactive Requirements Discovery
+# Requirements Discovery: $ARGUMENTS
 
-> **Context Framework Note**: This file provides behavioral instructions for Claude Code when users type `/sc:brainstorm` patterns. This is NOT an executable command - it's a context trigger that activates the behavioral patterns defined below.
+You are facilitating interactive requirements discovery through Socratic dialogue, multi-persona coordination, and systematic exploration.
 
-## Triggers
-- Ambiguous project ideas requiring structured exploration
-- Requirements discovery and specification development needs
-- Concept validation and feasibility assessment requests
-- Cross-session brainstorming and iterative refinement scenarios
+## Discovery Context
 
-## Context Trigger Pattern
+**Topic/Idea**: $ARGUMENTS
+
+**Project Structure**: @AGENTS.md
+
+## Discovery Protocol
+
+Execute systematic requirements discovery with multi-persona coordination:
+
+### 1. EXPLORE - Initial Understanding
+
+**Idea Assessment**:
+- Parse initial concept and stated goals
+- Identify ambiguity and gaps in specification
+- Determine complexity and scope indicators
+- Assess need for multi-domain expertise
+
+**Socratic Questioning**:
 ```
-/brainstorm [topic/idea] [--strategy systematic|agile|enterprise] [--depth shallow|normal|deep] [--parallel]
+Core Questions:
+- What problem does this solve for users?
+- Who are the target users and their workflows?
+- What's the expected user volume and scale?
+- What are the success criteria?
+- What constraints exist (technical, budget, timeline)?
+
+Follow-up Probing:
+- Can you elaborate on [aspect]?
+- What happens if [edge case]?
+- How does this differ from [alternative]?
+- What's the priority: [A] or [B]?
 ```
-**Usage**: Type this pattern in your Claude Code conversation to activate brainstorming behavioral mode with systematic exploration and multi-persona coordination.
 
-## Behavioral Flow
-1. **Explore**: Transform ambiguous ideas through Socratic dialogue and systematic questioning
-2. **Analyze**: Coordinate multiple personas for domain expertise and comprehensive analysis
-3. **Validate**: Apply feasibility assessment and requirement validation across domains
-4. **Specify**: Generate concrete specifications with cross-session persistence capabilities
-5. **Handoff**: Create actionable briefs ready for implementation or further development
+**Context Gathering**:
+- Existing systems and integrations
+- Technology stack preferences
+- Team capabilities and constraints
+- Timeline and resource limitations
 
-Key behaviors:
-- Multi-persona orchestration across architecture, analysis, frontend, backend, security domains
-- Advanced MCP coordination with intelligent routing for specialized analysis
-- Systematic execution with progressive dialogue enhancement and parallel exploration
-- Cross-session persistence with comprehensive requirements discovery documentation
+### 2. ANALYZE - Multi-Persona Coordination
 
-## MCP Integration
-- **Sequential MCP**: Complex multi-step reasoning for systematic exploration and validation
-- **Context7 MCP**: Framework-specific feasibility assessment and pattern analysis
-- **Magic MCP**: UI/UX feasibility and design system integration analysis
-- **Playwright MCP**: User experience validation and interaction pattern testing
-- **Morphllm MCP**: Large-scale content analysis and pattern-based transformation
-- **Serena MCP**: Cross-session persistence, memory management, and project context enhancement
+**Persona Activation** (based on project needs):
 
-## Tool Coordination
-- **Read/Write/Edit**: Requirements documentation and specification generation
-- **TodoWrite**: Progress tracking for complex multi-phase exploration
-- **Task**: Advanced delegation for parallel exploration paths and multi-agent coordination
-- **WebSearch**: Market research, competitive analysis, and technology validation
-- **sequentialthinking**: Structured reasoning for complex requirements analysis
+**Architecture Perspective**:
+```
+Questions:
+- What's the system structure and scalability needs?
+- How do components interact and communicate?
+- What are the data flow and state management requirements?
+- What integration points exist with external systems?
 
-## Key Patterns
-- **Socratic Dialogue**: Question-driven exploration → systematic requirements discovery
-- **Multi-Domain Analysis**: Cross-functional expertise → comprehensive feasibility assessment
-- **Progressive Coordination**: Systematic exploration → iterative refinement and validation
-- **Specification Generation**: Concrete requirements → actionable implementation briefs
+Analysis:
+- System design feasibility
+- Scalability considerations
+- Technology stack recommendations
+- Architecture pattern suggestions
+```
+
+**Frontend Perspective** (if UI component):
+```
+Questions:
+- What's the user experience and interaction flow?
+- What devices and browsers need support?
+- What accessibility requirements exist?
+- What's the visual design and branding needs?
+
+Analysis:
+- UI/UX feasibility with Magic MCP patterns
+- Framework selection (React, Vue, Angular)
+- Design system integration
+- Responsive design strategy
+```
+
+**Backend Perspective** (if server component):
+```
+Questions:
+- What data models and persistence needs exist?
+- What APIs and integration points are required?
+- What authentication and authorization needs exist?
+- What performance and scalability requirements?
+
+Analysis:
+- API design recommendations
+- Database selection and schema design
+- Authentication strategy
+- Performance optimization approaches
+```
+
+**Security Perspective**:
+```
+Questions:
+- What sensitive data is handled?
+- What authentication mechanisms are needed?
+- What compliance requirements exist (GDPR, HIPAA, etc.)?
+- What are the threat models and attack vectors?
+
+Analysis:
+- Security requirements and controls
+- Compliance validation
+- Authentication/authorization strategy
+- Data protection measures
+```
+
+**DevOps Perspective** (if deployment component):
+```
+Questions:
+- What deployment environments are needed?
+- What CI/CD requirements exist?
+- What monitoring and observability needs?
+- What infrastructure and scaling requirements?
+
+Analysis:
+- Deployment strategy recommendations
+- CI/CD pipeline design
+- Monitoring and alerting setup
+- Infrastructure as code approach
+```
+
+### 3. VALIDATE - Feasibility Assessment
+
+**Technical Feasibility**:
+- Technology stack validation
+- Integration complexity assessment
+- Performance requirement verification
+- Resource requirement estimation
+
+**Use Context7 for framework validation**:
+```
+If specific frameworks mentioned:
+- Validate framework capabilities
+- Check compatibility and versions
+- Review official patterns and best practices
+- Assess learning curve and community support
+```
+
+**Use Magic for UI feasibility**:
+```
+If UI components involved:
+- Search 21st.dev patterns for similar components
+- Validate design system integration
+- Assess accessibility compliance
+- Review responsive design requirements
+```
+
+**Business Feasibility**:
+- Resource availability assessment
+- Timeline realism evaluation
+- ROI and value proposition validation
+- Risk identification and mitigation
+
+### 4. SPECIFY - Concrete Requirements
+
+**Functional Requirements**:
+```
+FR-1: [Requirement]
+  - User Story: As a [role], I want [action] so that [benefit]
+  - Acceptance Criteria:
+    - Given [context], when [action], then [outcome]
+    - Given [context], when [action], then [outcome]
+  - Priority: High/Medium/Low
+```
+
+**Non-Functional Requirements**:
+```
+NFR-1: Performance
+  - Response time: <XXXms for [operation]
+  - Throughput: X requests/second
+  - Scalability: Support X concurrent users
+
+NFR-2: Security
+  - Authentication: [method]
+  - Authorization: [approach]
+  - Data protection: [strategy]
+
+NFR-3: Availability
+  - Uptime: X.XX%
+  - Recovery time: <X hours
+  - Backup strategy: [approach]
+```
+
+**Technical Specifications**:
+```
+Architecture:
+- [Component diagram or description]
+- [Technology stack]
+- [Integration points]
+
+Data Models:
+- [Entity relationships]
+- [Schema design]
+- [Data flow]
+
+API Design:
+- [Endpoint specifications]
+- [Request/response formats]
+- [Authentication approach]
+```
+
+### 5. HANDOFF - Implementation Brief
+
+**Deliverable Creation**:
+```markdown
+# Implementation Brief: [Project Name]
+
+## Executive Summary
+[2-3 paragraph overview]
+
+## Requirements
+### Functional Requirements
+[FR-1 through FR-N]
+
+### Non-Functional Requirements
+[NFR-1 through NFR-N]
+
+## Technical Specifications
+### Architecture
+[System design]
+
+### Technology Stack
+[Chosen technologies with rationale]
+
+### Data Models
+[Entity design]
+
+### API Design
+[Endpoint specifications]
+
+## Implementation Strategy
+### Phase 1: [Name]
+- Deliverables: [list]
+- Timeline: [estimate]
+- Dependencies: [list]
+
+### Phase 2: [Name]
+...
+
+## Risk Assessment
+- Risk 1: [description] - Mitigation: [strategy]
+- Risk 2: [description] - Mitigation: [strategy]
+
+## Success Criteria
+[Measurable outcomes]
+
+## Next Steps
+[Immediate actions]
+```
+
+**Cross-Session Persistence** (use Serena if available):
+```
+write_memory("requirements_[topic]", brief_content)
+write_memory("discovery_insights_[topic]", key_learnings)
+```
+
+**Save Location**:
+```
+claudedocs/briefs/[sanitized_topic]_brief_[timestamp].md
+```
+
+## Discovery Strategies
+
+### Systematic Strategy
+```
+Characteristics:
+- Comprehensive multi-persona analysis
+- Thorough feasibility assessment
+- Detailed specification generation
+- Enterprise-grade documentation
+
+Best for:
+- Complex enterprise projects
+- High-risk initiatives
+- Regulatory compliance needs
+- Large team coordination
+```
+
+### Agile Strategy
+```
+Characteristics:
+- Rapid iteration and validation
+- MVP-focused requirements
+- Lightweight documentation
+- Parallel exploration paths
+
+Best for:
+- Startup MVPs
+- Rapid prototyping
+- Experimental features
+- Small team projects
+```
+
+### Enterprise Strategy
+```
+Characteristics:
+- Comprehensive security analysis
+- Compliance validation
+- Scalability planning
+- Risk management focus
+
+Best for:
+- Enterprise deployments
+- Regulated industries
+- Mission-critical systems
+- Large-scale platforms
+```
+
+## MCP Tool Coordination
+
+**Sequential** (systematic reasoning):
+```
+Use for:
+- Complex requirement analysis
+- Multi-step feasibility assessment
+- Systematic validation workflows
+```
+
+**Context7** (framework validation):
+```
+Use for:
+- Technology stack verification
+- Framework capability assessment
+- Pattern and best practice review
+```
+
+**Magic** (UI feasibility):
+```
+Use for:
+- UI component feasibility
+- Design system integration
+- Accessibility validation
+```
+
+**Serena** (session persistence):
+```
+Use for:
+- Cross-session discovery
+- Iterative refinement tracking
+- Project memory management
+```
 
 ## Examples
 
-### Systematic Product Discovery
+### Product Discovery
 ```
 /brainstorm "AI-powered project management tool" --strategy systematic --depth deep
-# Multi-persona analysis: architect (system design), analyzer (feasibility), project-manager (requirements)
-# Sequential MCP provides structured exploration framework
+→ Multi-persona: architect, analyzer, security, project-manager
+→ Comprehensive feasibility across all domains
+→ Detailed specification with architecture, security, deployment
+→ Implementation brief ready for /workflow or /implement
 ```
 
-### Agile Feature Exploration
+### Feature Exploration
 ```
 /brainstorm "real-time collaboration features" --strategy agile --parallel
-# Parallel exploration paths with frontend, backend, and security personas
-# Context7 and Magic MCP for framework and UI pattern analysis
+→ Parallel exploration: frontend (UX), backend (sync), security (auth)
+→ Rapid MVP validation with Magic and Context7
+→ Lightweight spec focused on core functionality
 ```
 
-### Enterprise Solution Validation
+### Enterprise Validation
 ```
-/brainstorm "enterprise data analytics platform" --strategy enterprise --validate
-# Comprehensive validation with security, devops, and architect personas
-# Serena MCP for cross-session persistence and enterprise requirements tracking
-```
-
-### Cross-Session Refinement
-```
-/brainstorm "mobile app monetization strategy" --depth normal
-# Serena MCP manages cross-session context and iterative refinement
-# Progressive dialogue enhancement with memory-driven insights
+/brainstorm "enterprise data analytics platform" --strategy enterprise
+→ Security-first analysis with compliance validation
+→ Scalability and performance planning
+→ Risk assessment and mitigation strategies
+→ Enterprise-grade documentation
 ```
 
-## Boundaries
+## Quality Standards
 
-**Will:**
-- Transform ambiguous ideas into concrete specifications through systematic exploration
-- Coordinate multiple personas and MCP servers for comprehensive analysis
-- Provide cross-session persistence and progressive dialogue enhancement
+**Discovery Completeness**:
+- All ambiguities resolved
+- Multi-persona perspectives gathered
+- Feasibility validated
+- Concrete specifications generated
 
-**Will Not:**
-- Make implementation decisions without proper requirements discovery
-- Override user vision with prescriptive solutions during exploration phase
-- Bypass systematic exploration for complex multi-domain projects
+**Dialogue Quality**:
+- Socratic questioning effective
+- User vision preserved
+- Technical realism maintained
+- Collaborative exploration
+
+**Documentation Quality**:
+- Clear and actionable
+- Properly structured
+- Implementation-ready
+- Cross-session accessible
+
+---
+
+**Execute interactive requirements discovery now with Socratic dialogue and multi-persona coordination.**

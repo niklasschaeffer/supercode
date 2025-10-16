@@ -1,93 +1,302 @@
 ---
 name: load
-description: "Session lifecycle management with Serena MCP integration for project context loading"
-category: session
-complexity: standard
-mcp-servers: [serena]
-personas: []
+description: Session lifecycle management with Serena MCP integration for project context loading
+agent: context-gathering
 ---
 
-# /load - Project Context Loading
+# Project Context Loading: $ARGUMENTS
 
-## Triggers
-- Session initialization and project context loading requests
-- Cross-session persistence and memory retrieval needs
-- Project activation and context management requirements
-- Session lifecycle management and checkpoint loading scenarios
+You are loading project context and session state using Serena MCP integration for cross-session persistence and memory management.
 
-## Usage
+## Current Context
+
+**Current Directory**:
+!`pwd`
+
+**Project Structure**:
+@AGENTS.md
+
+**Available Memories**:
+Use Serena MCP `list_memories` to discover existing project memories and session context
+
+## Load Request
+
+**Target**: ${ARGUMENTS:-"current directory"}
+
+## Context Loading Protocol
+
+Execute systematic project context loading with Serena MCP integration:
+
+### 1. INITIALIZE - Serena MCP Connection
+
+**Project Activation**:
+- Use Serena MCP `activate_project` to establish project context
+- Verify Serena MCP connection and memory access
+- Check for existing project configuration and memories
+- Prepare session context for development workflow
+
+**Directory Analysis**:
+- Identify project root and structure
+- Detect project type (mono-repo, multi-repo, single project)
+- Discover configuration files and build systems
+- Map key directories and entry points
+
+### 2. DISCOVER - Memory Retrieval
+
+**List Available Memories**:
 ```
-/load [target] [--type project|config|deps|checkpoint] [--refresh] [--analyze]
-```
-
-## Behavioral Flow
-1. **Initialize**: Establish Serena MCP connection and session context management
-2. **Discover**: Analyze project structure and identify context loading requirements
-3. **Load**: Retrieve project memories, checkpoints, and cross-session persistence data
-4. **Activate**: Establish project context and prepare for development workflow
-5. **Validate**: Ensure loaded context integrity and session readiness
-
-Key behaviors:
-- Serena MCP integration for memory management and cross-session persistence
-- Project activation with comprehensive context loading and validation
-- Performance-critical operation with <500ms initialization target
-- Session lifecycle management with checkpoint and memory coordination
-
-## MCP Integration
-- **Serena MCP**: Mandatory integration for project activation, memory retrieval, and session management
-- **Memory Operations**: Cross-session persistence, checkpoint loading, and context restoration
-- **Performance Critical**: <200ms for core operations, <1s for checkpoint creation
-
-## Tool Coordination
-- **activate_project**: Core project activation and context establishment
-- **list_memories/read_memory**: Memory retrieval and session context loading
-- **Read/Grep/Glob**: Project structure analysis and configuration discovery
-- **Write**: Session context documentation and checkpoint creation
-
-## Key Patterns
-- **Project Activation**: Directory analysis → memory retrieval → context establishment
-- **Session Restoration**: Checkpoint loading → context validation → workflow preparation
-- **Memory Management**: Cross-session persistence → context continuity → development efficiency
-- **Performance Critical**: Fast initialization → immediate productivity → session readiness
-
-## Examples
-
-### Basic Project Loading
-```
-/load
-# Loads current directory project context with Serena memory integration
-# Establishes session context and prepares for development workflow
+Use Serena MCP list_memories to discover:
+- Previous session contexts
+- Project architecture insights
+- Development patterns and conventions
+- Technical decisions and rationale
+- Known issues and workarounds
 ```
 
-### Specific Project Loading
+**Memory Assessment**:
+- Identify relevant memories for current session
+- Prioritize by recency and relevance
+- Check for checkpoint data and recovery points
+- Validate memory integrity and compatibility
+
+### 3. LOAD - Context Establishment
+
+**Memory Loading**:
 ```
-/load /path/to/project --type project --analyze
-# Loads specific project with comprehensive analysis
-# Activates project context and retrieves cross-session memories
+For each relevant memory:
+1. Use Serena MCP read_memory to retrieve content
+2. Integrate insights into current session context
+3. Update project understanding
+4. Identify any conflicting or outdated information
+```
+
+**Context Types**:
+
+**Project Context**:
+- Architecture and design patterns
+- Module organization and relationships
+- Technology stack and dependencies
+- Build and deployment processes
+
+**Development Context**:
+- Coding conventions and style guides
+- Common patterns and utilities
+- Known issues and workarounds
+- Performance considerations
+
+**Session Context**:
+- Previous work and progress
+- Incomplete tasks and blockers
+- Technical decisions made
+- Learning insights captured
+
+### 4. ACTIVATE - Project Readiness
+
+**Context Integration**:
+- Synthesize loaded memories into coherent project understanding
+- Identify knowledge gaps requiring exploration
+- Highlight recent changes or updates
+- Prepare session-specific context
+
+**Validation**:
+- Verify project structure matches expected patterns
+- Confirm dependencies are available
+- Check for configuration issues
+- Validate memory consistency
+
+**Readiness Assessment**:
+- Confirm all critical context loaded
+- Identify any missing information
+- Flag potential issues or blockers
+- Report context loading status
+
+### 5. VALIDATE - Session Preparation
+
+**Context Quality Checks**:
+- Ensure loaded context is current and accurate
+- Verify no conflicting information
+- Check for deprecated patterns or outdated decisions
+- Validate cross-session compatibility
+
+**Performance Metrics**:
+- Context loading time (<500ms target)
+- Memory retrieval efficiency
+- Project activation speed
+- Session readiness score
+
+**Preparation Complete**:
+- Provide context summary and key insights
+- Highlight important patterns and conventions
+- Flag any issues or concerns
+- Ready for development workflow
+
+## Loading Strategies
+
+### Quick Load (Default)
+```
+1. Activate project with Serena MCP
+2. List available memories
+3. Load most recent session context
+4. Provide summary of key insights
+```
+
+### Comprehensive Load
+```
+1. Activate project with full analysis
+2. Load all relevant memories
+3. Synthesize cross-session learnings
+4. Provide detailed context report
+5. Identify patterns and conventions
 ```
 
 ### Checkpoint Restoration
 ```
-/load --type checkpoint --checkpoint session_123
-# Restores specific checkpoint with session context
-# Continues previous work session with full context preservation
+1. Identify specific checkpoint to restore
+2. Load checkpoint data and dependencies
+3. Restore session state and progress
+4. Resume from checkpoint point
 ```
 
-### Dependency Context Loading
+### Refresh Load
 ```
-/load --type deps --refresh
-# Loads dependency context with fresh analysis
-# Updates project understanding and dependency mapping
+1. Clear cached context
+2. Re-analyze project structure
+3. Reload all memories fresh
+4. Update stale information
 ```
 
-## Boundaries
+## Context Categories
 
-**Will:**
-- Load project context using Serena MCP integration for memory management
-- Provide session lifecycle management with cross-session persistence
-- Establish project activation with comprehensive context loading
+**Architecture Memories**:
+- System design and component relationships
+- Design decisions and trade-offs
+- Scalability and performance patterns
+- Integration patterns and contracts
 
-**Will Not:**
-- Modify project structure or configuration without explicit permission
-- Load context without proper Serena MCP integration and validation
-- Override existing session context without checkpoint preservation
+**Pattern Memories**:
+- Common code patterns and idioms
+- Framework usage conventions
+- Testing strategies and utilities
+- Error handling approaches
+
+**Session Memories**:
+- Recent work and progress
+- Incomplete tasks and next steps
+- Blockers and issues encountered
+- Insights and discoveries
+
+**Configuration Memories**:
+- Build and deployment setup
+- Environment configuration
+- Tool preferences and settings
+- Workflow optimizations
+
+## Serena MCP Operations
+
+**Project Activation**:
+```
+activate_project(project_path)
+→ Establishes project context
+→ Enables memory operations
+→ Prepares session environment
+```
+
+**Memory Discovery**:
+```
+list_memories()
+→ Returns available memory files
+→ Shows memory metadata
+→ Enables selective loading
+```
+
+**Memory Loading**:
+```
+read_memory(memory_name)
+→ Retrieves memory content
+→ Integrates into session context
+→ Updates project understanding
+```
+
+## Examples
+
+### Basic Project Load
+```
+/load
+→ Activates current directory project
+→ Lists available memories
+→ Loads recent session context
+→ Reports key insights and patterns
+→ Ready for development workflow
+```
+
+### Specific Project Load
+```
+/load /path/to/project --analyze
+→ Activates specified project path
+→ Performs comprehensive structure analysis
+→ Loads all relevant memories
+→ Provides detailed context report
+→ Highlights important conventions
+```
+
+### Checkpoint Restoration
+```
+/load --checkpoint session_2024_01_15_14_30
+→ Identifies checkpoint in memories
+→ Restores session state from checkpoint
+→ Loads associated context and progress
+→ Resumes from saved point
+→ Reports restoration status
+```
+
+### Fresh Context Load
+```
+/load --refresh
+→ Clears cached context
+→ Re-analyzes project structure
+→ Reloads memories with fresh perspective
+→ Updates stale information
+→ Provides current project understanding
+```
+
+## Quality Standards
+
+**Loading Efficiency**:
+- Fast context loading (<500ms for typical projects)
+- Efficient memory retrieval
+- Minimal redundant operations
+- Quick session readiness
+
+**Context Accuracy**:
+- Current and relevant information
+- No conflicting insights
+- Updated patterns and conventions
+- Validated against current state
+
+**Completeness**:
+- All critical context loaded
+- Important patterns identified
+- Key decisions documented
+- Session-ready state achieved
+
+## Integration with Session Lifecycle
+
+**Session Start Flow**:
+```
+1. /load → Activate project and load context
+2. Work on tasks with full project understanding
+3. Periodic checkpoints (automatic or manual)
+4. /save → Persist discoveries and progress
+5. Session end with context preserved
+```
+
+**Cross-Session Benefits**:
+- Instant context restoration
+- No re-learning project structure
+- Preserved insights and decisions
+- Continuous knowledge accumulation
+- Efficient session transitions
+
+---
+
+**Execute project context loading now with Serena MCP integration and cross-session persistence.**

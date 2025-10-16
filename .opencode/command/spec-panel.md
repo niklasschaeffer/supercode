@@ -1,10 +1,10 @@
 ---
 name: spec-panel
 description: "Multi-expert specification review and improvement using renowned specification and software engineering experts"
+agent: requirements-analyst
 category: analysis
 complexity: enhanced
 mcp-servers: [sequential, context7]
-personas: [technical-writer, system-architect, quality-engineer]
 ---
 
 # /spec-panel - Expert Specification Review Panel

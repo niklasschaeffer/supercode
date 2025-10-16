@@ -1,88 +1,260 @@
 ---
 name: document
-description: "Generate focused documentation for components, functions, APIs, and features"
-category: utility
-complexity: basic
-mcp-servers: []
-personas: []
+description: Generate focused documentation for components, functions, APIs, and features
+agent: technical-writer
 ---
 
-# /sc:document - Focused Documentation Generation
+# Documentation Generation: $ARGUMENTS
 
-## Triggers
-- Documentation requests for specific components, functions, or features
-- API documentation and reference material generation needs
-- Code comment and inline documentation requirements
-- User guide and technical documentation creation requests
+You are generating focused, high-quality documentation for code components, APIs, or features with appropriate style and format.
+
+## Project Context
+
+**Project Structure**:
+@AGENTS.md
+
+**README Overview**:
+@README.md
+
+**Existing Documentation**:
+!`find . -type f -name "*.md" ! -path "*/node_modules/*" ! -path "*/.git/*" | head -15`
+
+**Target Content** (if file specified):
+@$ARGUMENTS
+
+## Documentation Request
+
+**Target**: $ARGUMENTS
+
+## Documentation Protocol
+
+Execute systematic documentation generation with audience-appropriate content:
+
+### 1. ANALYZE - Target Understanding
+
+**Code Analysis**:
+- Examine component structure and interfaces
+- Identify public APIs and exported functions
+- Understand data flows and dependencies
+- Extract key functionality and purpose
+
+**Context Assessment**:
+- Determine target audience (developers, users, API consumers)
+- Identify documentation type requirements (inline, external, API reference, guide)
+- Review existing documentation patterns and style
+- Assess integration with project documentation ecosystem
+
+### 2. IDENTIFY - Documentation Requirements
+
+**Type Selection**:
+- **Inline**: JSDoc/TSDoc comments, docstrings, function/class documentation
+- **External**: README files, component guides, architecture documentation
+- **API**: Reference documentation with endpoints, parameters, responses
+- **Guide**: Tutorials, how-to guides, integration instructions
+
+**Style Determination**:
+- **Brief**: Concise descriptions with essential information
+- **Detailed**: Comprehensive documentation with examples and edge cases
+- Audience-appropriate technical depth
+- Consistent with project conventions
+
+### 3. GENERATE - Documentation Content
+
+**Core Content Elements**:
+- Purpose and overview
+- Interface specifications (parameters, return values, types)
+- Usage examples with code snippets
+- Error handling and edge cases
+- Dependencies and requirements
+
+**Language-Specific Patterns**:
+- JavaScript/TypeScript: JSDoc with type annotations
+- Python: Google/NumPy style docstrings
+- Java: JavaDoc with proper tags
+- Go: Package and function comments
+
+**Quality Requirements**:
+- Clear and concise language
+- Accurate technical information
+- Practical examples
+- Proper formatting and structure
+
+### 4. FORMAT - Structure and Organization
+
+**Inline Documentation**:
+```javascript
+/**
+ * Brief description of function purpose
+ *
+ * @param {Type} paramName - Parameter description
+ * @returns {Type} Return value description
+ * @throws {ErrorType} Error condition description
+ * @example
+ * // Usage example
+ * functionName(arg);
+ */
+```
+
+**API Documentation**:
+```markdown
+## Endpoint Name
+
+**URL**: `/api/endpoint`
+**Method**: `POST`
+
+**Parameters**:
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+
+**Response**:
+```json
+{
+  "example": "response"
+}
+```
+
+**User Guide**:
+```markdown
+# Feature Name
+
+## Overview
+Brief description of feature
+
+## Installation
+Setup instructions
 
 ## Usage
+Step-by-step guide with examples
+
+## Configuration
+Available options and settings
+
+## Troubleshooting
+Common issues and solutions
 ```
-/sc:document [target] [--type inline|external|api|guide] [--style brief|detailed]
-```
 
-## Behavioral Flow
-1. **Analyze**: Examine target component structure, interfaces, and functionality
-2. **Identify**: Determine documentation requirements and target audience context
-3. **Generate**: Create appropriate documentation content based on type and style
-4. **Format**: Apply consistent structure and organizational patterns
-5. **Integrate**: Ensure compatibility with existing project documentation ecosystem
+### 5. INTEGRATE - Ecosystem Compatibility
 
-Key behaviors:
-- Code structure analysis with API extraction and usage pattern identification
-- Multi-format documentation generation (inline, external, API reference, guides)
-- Consistent formatting and cross-reference integration
-- Language-specific documentation patterns and conventions
+**Cross-Referencing**:
+- Link to related documentation
+- Reference dependent components
+- Connect to API documentation
+- Include navigation aids
 
-## Tool Coordination
-- **Read**: Component analysis and existing documentation review
-- **Grep**: Reference extraction and pattern identification
-- **Write**: Documentation file creation with proper formatting
-- **Glob**: Multi-file documentation projects and organization
+**Consistency Checks**:
+- Follow project documentation standards
+- Use consistent terminology
+- Match existing formatting patterns
+- Maintain style guide compliance
 
-## Key Patterns
-- **Inline Documentation**: Code analysis → JSDoc/docstring generation → inline comments
-- **API Documentation**: Interface extraction → reference material → usage examples
-- **User Guides**: Feature analysis → tutorial content → implementation guidance
-- **External Docs**: Component overview → detailed specifications → integration instructions
-
-## Examples
+## Documentation Types
 
 ### Inline Code Documentation
 ```
-/sc:document src/auth/login.js --type inline
-# Generates JSDoc comments with parameter and return descriptions
-# Adds comprehensive inline documentation for functions and classes
+Target: Function, class, or method
+Content:
+- Purpose and behavior description
+- Parameter types and descriptions
+- Return value specification
+- Exception/error documentation
+- Usage examples
+
+Output: JSDoc/docstring comments added to code
 ```
 
-### API Reference Generation
+### API Reference Documentation
 ```
-/sc:document src/api --type api --style detailed
-# Creates comprehensive API documentation with endpoints and schemas
-# Generates usage examples and integration guidelines
+Target: API endpoints or SDK methods
+Content:
+- Endpoint specifications
+- Request/response schemas
+- Authentication requirements
+- Rate limits and constraints
+- Error codes and handling
+
+Output: Comprehensive API reference (Markdown/OpenAPI)
 ```
 
-### User Guide Creation
+### User Guide Documentation
 ```
-/sc:document payment-module --type guide --style brief
-# Creates user-focused documentation with practical examples
-# Focuses on implementation patterns and common use cases
+Target: Feature or module
+Content:
+- Feature overview and purpose
+- Installation/setup instructions
+- Usage examples and workflows
+- Configuration options
+- Troubleshooting guidance
+
+Output: Tutorial-style guide with examples
 ```
 
 ### Component Documentation
 ```
-/sc:document components/ --type external
-# Generates external documentation files for component library
-# Includes props, usage examples, and integration patterns
+Target: UI component or module
+Content:
+- Component purpose and behavior
+- Props/parameters specification
+- Usage examples with code
+- Styling and customization
+- Integration patterns
+
+Output: Component library documentation
 ```
 
-## Boundaries
+## Quality Standards
 
-**Will:**
-- Generate focused documentation for specific components and features
-- Create multiple documentation formats based on target audience needs
-- Integrate with existing documentation ecosystems and maintain consistency
+**Accuracy**:
+- Technically correct information
+- Up-to-date with current implementation
+- Verified examples that work
+- Accurate type information
 
-**Will Not:**
-- Generate documentation without proper code analysis and context understanding
-- Override existing documentation standards or project-specific conventions
-- Create documentation that exposes sensitive implementation details
+**Clarity**:
+- Clear, concise language
+- Appropriate technical depth
+- Well-organized structure
+- Helpful examples
+
+**Completeness**:
+- All public APIs documented
+- Edge cases covered
+- Error conditions explained
+- Integration guidance provided
+
+## Examples
+
+**Inline Function Documentation**:
+```
+/document src/auth/validateToken.js --type inline
+→ Adds JSDoc comments with parameter types and return values
+→ Includes usage examples and error handling documentation
+→ Follows project JSDoc style conventions
+```
+
+**API Reference**:
+```
+/document src/api --type api --style detailed
+→ Generates comprehensive API documentation for all endpoints
+→ Includes request/response schemas, authentication, error codes
+→ Provides integration examples and best practices
+```
+
+**User Guide**:
+```
+/document payment-integration --type guide --style brief
+→ Creates step-by-step integration guide
+→ Includes setup, configuration, and usage examples
+→ Provides troubleshooting section with common issues
+```
+
+**Component Library Docs**:
+```
+/document src/components --type external
+→ Generates documentation for all components
+→ Includes props, usage examples, and customization options
+→ Provides component preview and integration patterns
+```
+
+---
+
+**Generate focused, high-quality documentation now with appropriate style and comprehensive content.**

@@ -1,10 +1,10 @@
 ---
 name: spawn
 description: "Meta-system task orchestration with intelligent breakdown and delegation"
+agent: system-architect
 category: special
 complexity: high
 mcp-servers: []
-personas: []
 ---
 
 # /spawn - Meta-System Task Orchestration

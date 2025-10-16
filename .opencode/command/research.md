@@ -1,103 +1,351 @@
 ---
 name: research
 description: Deep web research with adaptive planning and intelligent search
-category: command
-complexity: advanced
-mcp-servers: [tavily, sequential, playwright, serena]
-personas: [deep-research-agent]
+agent: deep-research-agent
+model: claude-sonnet-4-5
 ---
 
-# /sc:research - Deep Research Command
+# Deep Research: $ARGUMENTS
 
-> **Context Framework Note**: This command activates comprehensive research capabilities with adaptive planning, multi-hop reasoning, and evidence-based synthesis.
+You are conducting comprehensive web research using Tavily MCP with adaptive planning, multi-hop reasoning, and evidence-based synthesis.
 
-## Triggers
-- Research questions beyond knowledge cutoff
-- Complex research questions
-- Current events and real-time information
-- Academic or technical research requirements
-- Market analysis and competitive intelligence
+## Research Context
 
-## Context Trigger Pattern
-```
-/sc:research "[query]" [--depth quick|standard|deep|exhaustive] [--strategy planning|intent|unified]
-```
+**Query**: $ARGUMENTS
 
-## Behavioral Flow
+**Research Configuration**: Use research defaults from RESEARCH_CONFIG.md with parallel-first execution
 
-### 1. Understand (5-10% effort)
-- Assess query complexity and ambiguity
-- Identify required information types
-- Determine resource requirements
-- Define success criteria
+## Research Protocol
 
-### 2. Plan (10-15% effort)
-- Select planning strategy based on complexity
+Execute adaptive research with Tavily MCP integration and intelligent source management:
+
+### 1. UNDERSTAND - Query Analysis
+
+**Query Assessment**:
+- Analyze complexity and ambiguity level
+- Identify required information types (factual, analytical, comparative)
+- Determine temporal requirements (current vs historical)
+- Define success criteria and confidence targets
+
+**Scope Determination**:
+- Estimate breadth vs depth requirements
 - Identify parallelization opportunities
-- Generate research question decomposition
-- Create investigation milestones
+- Assess multi-hop exploration needs
+- Set confidence thresholds (0.6-0.9 range)
 
-### 3. TodoWrite (5% effort)
-- Create adaptive task hierarchy
-- Scale tasks to query complexity (3-15 tasks)
-- Establish task dependencies
-- Set progress tracking
+### 2. PLAN - Research Strategy
 
-### 4. Execute (50-60% effort)
-- **Parallel-first searches**: Always batch similar queries
-- **Smart extraction**: Route by content complexity
-- **Multi-hop exploration**: Follow entity and concept chains
-- **Evidence collection**: Track sources and confidence
+**Strategy Selection**:
+```
+Planning-Only:
+- Clear, specific query
+- Well-defined scope
+- Direct execution possible
 
-### 5. Track (Continuous)
-- Monitor TodoWrite progress
-- Update confidence scores
-- Log successful patterns
-- Identify information gaps
+Intent-Planning:
+- Ambiguous terms present
+- Clarification beneficial
+- 2-3 clarifying questions
 
-### 6. Validate (10-15% effort)
-- Verify evidence chains
-- Check source credibility
-- Resolve contradictions
-- Ensure completeness
+Unified:
+- Complex multi-faceted query
+- User collaboration valuable
+- Iterative refinement expected
+```
 
-## Key Patterns
+**Search Planning**:
+- **Parallel-First Mandate**: Default to parallel searches
+- Batch similar queries together (max 5 concurrent)
+- Only sequential for dependent hops
+- Identify entity and concept exploration paths
 
-### Parallel Execution
-- Batch all independent searches
-- Run concurrent extractions
-- Only sequential for dependencies
+**Depth Configuration**:
+```
+Quick (--depth quick):
+- Basic search, 1 hop, 10 sources max
+- Summary output, 2min target
+- Confidence: 0.6+
 
-### Evidence Management
-- Track search results
-- Provide clear citations when available
+Standard (default):
+- Extended search, 2-3 hops, 20 sources
+- Structured report, 5min target
+- Confidence: 0.7+
+
+Deep (--depth deep):
+- Comprehensive search, 3-4 hops, 40 sources
+- Detailed analysis, 8min target
+- Confidence: 0.8+
+
+Exhaustive (--depth exhaustive):
+- Maximum depth, 5 hops, 50+ sources
+- Complete investigation, 10min target
+- Confidence: 0.9+
+```
+
+### 3. EXECUTE - Parallel Research
+
+**Tavily Search Operations** (Parallel-First):
+```
+MANDATORY PARALLEL EXECUTION:
+1. Batch all independent search queries
+2. Execute 3-5 searches concurrently
+3. Only use sequential for hop dependencies
+
+Example - CORRECT:
+- Search 1: "quantum computing 2024 breakthroughs"
+- Search 2: "quantum computing IBM latest"
+- Search 3: "quantum computing Google research"
+→ Execute ALL THREE in parallel
+
+Example - WRONG:
+- Search 1 → wait → Search 2 → wait → Search 3
+```
+
+**Smart Extraction Routing**:
+```
+Simple Content → Tavily Extract:
+- Static HTML, simple articles
+- Public content, no JavaScript
+- Fast extraction priority
+
+Complex Content → Playwright:
+- JavaScript-heavy pages
+- Dynamic content, SPAs
+- Interactive elements
+- Authentication required
+```
+
+**Multi-Hop Exploration**:
+```
+Hop 1 (Initial):
+- Parallel broad searches
+- Gather baseline information
+- Identify key entities and concepts
+
+Hop 2-3 (Entity Expansion):
+- Parallel entity-specific searches
+- Follow promising leads
+- Cross-reference findings
+
+Hop 4-5 (Deep Dive):
+- Targeted specific investigations
+- Validate conclusions
+- Fill remaining gaps
+```
+
+### 4. SYNTHESIZE - Evidence Integration
+
+**Source Management**:
+```
+For each source:
+- Track URL and retrieval timestamp
+- Assess credibility (tier 1-4 scoring)
+- Extract key information
+- Note confidence level
+- Cross-reference with other sources
+```
+
+**Credibility Assessment**:
+```
+Tier 1 (0.9-1.0):
+- Academic journals, official docs
+- Government publications
+- Peer-reviewed papers
+
+Tier 2 (0.7-0.9):
+- Established media outlets
+- Industry reports, expert blogs
+
+Tier 3 (0.5-0.7):
+- Community resources
+- Wikipedia, technical forums
+
+Tier 4 (0.3-0.5):
+- User forums, social media
+- Unverified sources
+```
+
+**Contradiction Resolution**:
+- Identify conflicting information
+- Compare source credibility scores
+- Seek additional authoritative sources
 - Note uncertainties explicitly
 
-### Adaptive Depth
-- **Quick**: Basic search, 1 hop, summary output
-- **Standard**: Extended search, 2-3 hops, structured report
-- **Deep**: Comprehensive search, 3-4 hops, detailed analysis
-- **Exhaustive**: Maximum depth, 5 hops, complete investigation
+### 5. VALIDATE - Quality Assurance
 
-## MCP Integration
-- **Tavily**: Primary search and extraction engine
-- **Sequential**: Complex reasoning and synthesis
-- **Playwright**: JavaScript-heavy content extraction
-- **Serena**: Research session persistence
+**Completeness Check**:
+- All query aspects addressed
+- Sufficient source diversity
+- Confidence targets met
+- Gaps identified and documented
 
-## Output Standards
-- Save reports to `claudedocs/research_[topic]_[timestamp].md`
-- Include executive summary
-- Provide confidence levels
-- List all sources with citations
+**Evidence Validation**:
+- Sources properly cited
+- Claims traceable to sources
+- Conflicting views presented
+- Uncertainty acknowledged
+
+**Self-Reflection** (use Serena if available):
+```
+Use think_about_collected_information:
+- Assess information sufficiency
+- Identify remaining gaps
+- Evaluate research quality
+- Determine if additional hops needed
+```
+
+### 6. DELIVER - Research Output
+
+**Report Structure**:
+```markdown
+# Research Report: [Topic]
+
+## Executive Summary
+[2-3 paragraph overview with key findings]
+
+## Key Findings
+1. [Finding 1] - Confidence: XX%
+   - Sources: [cite sources]
+2. [Finding 2] - Confidence: XX%
+   - Sources: [cite sources]
+
+## Detailed Analysis
+[In-depth exploration of findings]
+
+## Source Assessment
+- Total sources: XX
+- Credibility distribution: Tier 1 (X), Tier 2 (X), Tier 3 (X)
+- Contradictions identified: X
+- Information gaps: [list]
+
+## Confidence Assessment
+- Overall confidence: XX%
+- High confidence areas: [list]
+- Low confidence areas: [list]
+- Recommendations for further research: [if needed]
+
+## Sources
+[Numbered list with URLs and retrieval dates]
+```
+
+**Save Location**:
+```
+claudedocs/research_[sanitized_topic]_[timestamp].md
+```
+
+## Research Patterns
+
+### Parallel Search Optimization
+```
+ALWAYS parallel:
+- Initial broad searches
+- Entity-specific queries
+- Verification searches
+- Gap-filling searches
+
+ONLY sequential:
+- Hop N requires Hop N-1 results
+- API rate limit constraints
+- Explicit user requirement
+```
+
+### Multi-Hop Strategies
+```
+Entity Expansion:
+Topic → Entities → Related Work → Collaborators
+
+Concept Deepening:
+Topic → Subtopics → Details → Examples
+
+Temporal Progression:
+Current → Recent → Historical → Origins
+
+Causal Chain:
+Effect → Immediate Cause → Root Cause
+```
+
+## MCP Tool Usage
+
+**Tavily Search**:
+```
+tavily-search:
+- query: search terms
+- search_depth: basic|advanced
+- max_results: 5-20
+- include_domains: [optional filter]
+- time_range: day|week|month|year
+```
+
+**Tavily Extract**:
+```
+tavily-extract:
+- urls: [list of URLs]
+- extract_depth: basic|advanced
+```
+
+**Playwright** (for complex content):
+```
+browser_navigate: navigate to URL
+browser_snapshot: capture content
+browser_take_screenshot: visual validation
+```
+
+**Serena** (for session persistence):
+```
+write_memory: save research session
+read_memory: load previous research
+think_about_collected_information: assess quality
+```
 
 ## Examples
+
+### Current Events Research
 ```
-/sc:research "latest developments in quantum computing 2024"
-/sc:research "competitive analysis of AI coding assistants" --depth deep
-/sc:research "best practices for distributed systems" --strategy unified
+/research "latest quantum computing breakthroughs 2024"
+→ Tavily search with time_range=month
+→ Parallel searches: IBM, Google, research papers
+→ Extract and synthesize findings
+→ Confidence: 85%, 15 sources (Tier 1: 8, Tier 2: 7)
 ```
 
-## Boundaries
-**Will**: Current information, intelligent search, evidence-based analysis
-**Won't**: Make claims without sources, skip validation, access restricted content
+### Technical Deep Dive
+```
+/research "distributed consensus algorithms comparison" --depth deep
+→ Multi-hop: algorithms → implementations → benchmarks
+→ 4 hops, 35 sources analyzed
+→ Comprehensive analysis with code examples
+→ Confidence: 90%, academic focus
+```
+
+### Market Analysis
+```
+/research "AI coding assistants competitive landscape" --depth exhaustive
+→ Parallel: feature comparison, pricing, user reviews
+→ Playwright for dynamic content extraction
+→ 5 hops, 50+ sources
+→ Complete market intelligence report
+```
+
+## Quality Standards
+
+**Search Efficiency**:
+- Parallel execution default
+- <500ms per search average
+- 3-5 concurrent searches
+- Intelligent rate limit management
+
+**Evidence Quality**:
+- Multiple source verification
+- Credibility scoring applied
+- Contradictions identified
+- Uncertainty acknowledged
+
+**Report Quality**:
+- Clear executive summary
+- Proper source citations
+- Confidence levels specified
+- Actionable insights provided
+
+---
+
+**Execute comprehensive research now with Tavily MCP, parallel-first execution, and evidence-based synthesis.**
