@@ -1,0 +1,42 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "catppuccin",
+  "mcp": {
+    "sequential": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "context7": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "@upstash/context7-mcp"]
+    },
+    "morphllm-fast-apply": {
+      "type": "local",
+      "enabled": true,
+      "environment" : {
+        "MORPH_API_KEY": "YOUR_MORPH_API_KEY"
+      },
+      "command": ["npx", "-y", "@morph-llm/morph-fast-apply"]
+    },
+    "tavily": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "tavily-mcp@latest"],
+      "environment": {
+        "TAVILY_API_KEY": "YOUR_TAVILY_API_KEY"
+      }
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+    },
+    "serena": {
+      "type": "local",
+      "enabled": true,
+      "command" : ["uvx", "--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "agent"]
+    }
+  }
+}
