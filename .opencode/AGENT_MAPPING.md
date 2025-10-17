@@ -114,16 +114,17 @@ All agents located in `.opencode/agent/`:
 - spec-panel → requirements-analyst
 - troubleshoot → root-cause-analyst
 - workflow → requirements-analyst
+- prompt → prompt-engineer
 
 ## Verification
 
-All 25 commands verified:
-- **24 commands**: Have agents that exist as files in `.opencode/agent/`
+All 26 commands verified:
+- **25 commands**: Have agents that exist as files in `.opencode/agent/`
 - **1 command**: Explicitly has no agent (implement - multi-domain)
-- **0 commands**: Using non-existent agents ✓
+- **0 commands**: Using non-existent agents
 
-**Coverage**: 100% (25/25 commands correctly mapped)
-**Agent Utilization**: 14 different agents used appropriately
+**Coverage**: 100% (26/26 commands correctly mapped)
+**Agent Utilization**: 15 different agents used appropriately
 **Specialization**: Commands matched to most appropriate agent expertise
 **File System Validation**: All agents exist as `.md` files in `.opencode/agent/`
 
