@@ -10,9 +10,11 @@ echo "#####################################################################"
 
 mkdir -p "$HOME"/.config/opencode/agent
 mkdir -p "$HOME"/.config/opencode/command
+mkdir -p "$HOME"/.config/opencode/mode
 
 cp .opencode/agent/*.md "$HOME"/.config/opencode/agent
 cp .opencode/command/*.md "$HOME"/.config/opencode/command
+cp .opencode/mode/*.md "$HOME"/.config/opencode/mode
 
 cp ./*.md "$HOME"/.config/opencode
 cp ./opencode.jsonc "$HOME"/.config/opencode
