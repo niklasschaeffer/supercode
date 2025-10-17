@@ -12,6 +12,11 @@
       "enabled": true,
       "command": ["npx", "-y", "@upstash/context7-mcp"]
     },
+    "playwright": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "@playwright/mcp@latest"]
+    },
     "morphllm-fast-apply": {
       "type": "local",
       "enabled": true,
@@ -19,6 +24,19 @@
         "MORPH_API_KEY": "YOUR_MORPH_API_KEY"
       },
       "command": ["npx", "-y", "@morph-llm/morph-fast-apply"]
+    },
+    "shadcn": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "shadcn@latest", "mcp"]
+    },
+    "prompt-kit": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "shadcn@canary", "registry:mcp"],
+      "environment": {
+        "REGISTRY_URL": "https://www.prompt-kit.com/c/registry.json"
+      }
     },
     "tavily": {
       "type": "local",
