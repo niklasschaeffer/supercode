@@ -19,13 +19,13 @@ The SuperCode framework components will be automatically imported below.
 @RULES.md
 
 # Behavioral Modes
-@MODE_Brainstorming.md
-@MODE_Business_Panel.md
-@MODE_DeepResearch.md
-@MODE_Introspection.md
-@MODE_Orchestration.md
-@MODE_Task_Management.md
-@MODE_Token_Efficiency.md
+@brainstorm.md
+@business-panel.md
+@deep-research.md
+@introspection.md
+@orchestration.md
+@task-management.md
+@token-efficiency.md
 
 # MCP Documentation
 @MCP_Context7.md
