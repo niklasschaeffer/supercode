@@ -1,379 +1,198 @@
 ---
 name: save
-description: Session lifecycle management with Serena MCP integration for session context persistence
+description: Session lifecycle management with Serena and In-Memoria MCP integration for persistent context
 agent: logging
 ---
 
 # Session Context Persistence: $ARGUMENTS
 
-You are saving session context and discoveries using Serena MCP integration for cross-session persistence and memory management.
+You are saving session context using Serena MCP (session memories) and In-Memoria MCP (codebase intelligence) for complete cross-session persistence.
 
 ## Session Context
 
-**Current Directory**:
-!`pwd`
-
-**Session Duration**:
-!`echo "Session active since startup"`
-
-**Recent Work**:
-!`git log --oneline -5`
-
-**Existing Memories**:
-Use Serena MCP `list_memories` to see current memory state
+**Current Directory**: !`pwd`
+**Session Duration**: !`echo "Session active since startup"`
+**Recent Work**: !`git log --oneline -5`
+**Existing Memories**: Use Serena MCP `list_memories` to see current state
 
 ## Save Request
 
-**Target**: ${ARGUMENTS:-"session context and discoveries"}
+**Target**: ${ARGUMENTS:-"session context and codebase insights"}
 
 ## Session Persistence Protocol
 
-Execute systematic session context saving with Serena MCP integration:
+Execute systematic session saving with dual MCP integration:
 
-### 1. ANALYZE - Session Progress
+### 1. ANALYZE - Session Progress & Insights
 
 **Work Assessment**:
-- Review changes made during session (git status, git diff)
+- Review session changes (git status, git diff)
 - Identify completed tasks and deliverables
-- Assess progress toward session goals
+- Assess progress toward goals
 - Determine what warrants persistence
 
 **Discovery Identification**:
-- Extract insights about project architecture
-- Identify new patterns or conventions discovered
+- Extract architecture insights discovered
+- Identify new patterns or conventions learned
 - Document technical decisions made
 - Capture workarounds and solutions found
 
-**Context Evaluation**:
-- Assess what future sessions need to know
-- Prioritize critical vs nice-to-have context
-- Check for ephemeral vs persistent information
-- Identify gaps in existing memories
+**Codebase Learning**:
+- Note pattern usage discovered during session
+- Identify architectural understanding gained
+- Recognize conventions and style preferences observed
+- Document error handling approaches seen
 
-### 2. PERSIST - Memory Operations
+### 2. PERSIST - Dual Memory Operations
 
-**Memory Creation**:
+**Serena MCP - Session Memories**:
 ```
-For each discovery or context to preserve:
-1. Categorize memory type (architecture, pattern, session, config)
-2. Choose meaningful memory name
-3. Format content for clarity and reusability
-4. Use Serena MCP write_memory to persist
-```
+write_memory(memory_name, content)
+→ Session work logs and progress
+→ Task context and decisions
+→ Blockers and resolutions
+→ Next steps and recommendations
 
-**Memory Types to Save**:
-
-**Architecture Memories**:
-```
-Memory Name: architecture_[component_name]
-Content:
-- Component purpose and responsibilities
-- Relationships to other components
-- Design decisions and rationale
-- Scalability and performance notes
+Memory types:
+- session_[date_time]: Work completed, insights, next steps
+- checkpoint_[timestamp]: Recovery points with full state
+- decision_[topic]: Technical decisions and rationale
+- issue_[topic]: Known issues and workarounds
 ```
 
-**Pattern Memories**:
+**In-Memoria MCP - Codebase Intelligence**:
 ```
-Memory Name: pattern_[pattern_name]
-Content:
-- Pattern description and use cases
-- Implementation examples
-- When to use vs alternatives
-- Common pitfalls and solutions
+contribute_insights({ insights, category })
+→ Feed session discoveries to pattern learning
+→ Architecture understanding contributions
+→ Convention and style observations
+→ Error handling pattern insights
+
+Contribution categories:
+- architecture: Component design and relationships
+- patterns: Code patterns and idioms discovered
+- conventions: Naming and style preferences
+- error_handling: Error patterns observed
 ```
 
-**Session Memories**:
-```
-Memory Name: session_[date_time]
-Content:
-- Work completed in session
-- Key insights and discoveries
-- Blockers encountered and resolutions
-- Next steps and recommendations
-```
-
-**Configuration Memories**:
-```
-Memory Name: config_[aspect]
-Content:
-- Configuration purpose and settings
-- Dependencies and requirements
-- Setup instructions
-- Troubleshooting guidance
-```
-
-### 3. CHECKPOINT - Progress Tracking
+### 3. CHECKPOINT - State Preservation
 
 **Checkpoint Creation**:
-```
-Create checkpoint when:
-- Session duration > 30 minutes
-- Complex task near completion
-- Before risky operations
-- User explicitly requests
-- Major milestone reached
-```
+- Session duration >30min → auto-checkpoint
+- Before risky operations → safety checkpoint
+- Major milestone reached → progress checkpoint
+- User explicit request → manual checkpoint
 
-**Checkpoint Content**:
+**Checkpoint Content** (Serena):
+```
+checkpoint_[date]_[time]_[task]
 - Current task state and progress
-- Work completed so far
-- Remaining work identified
+- Work completed and remaining
 - Context for resumption
-- Recovery instructions if needed
-
-**Checkpoint Naming**:
+- Recovery instructions
 ```
-Format: checkpoint_[date]_[time]_[task_description]
-Example: checkpoint_2024_01_15_14_30_auth_implementation
+
+**Pattern Export** (In-Memoria, optional):
+```
+export_patterns({ path, filter })
+→ Share learned patterns with team
+→ Transfer intelligence across projects
+→ Backup codebase understanding
 ```
 
 ### 4. VALIDATE - Data Integrity
 
-**Memory Validation**:
+**Serena Validation**:
 - Verify memory write successful
-- Check content is well-formatted
-- Ensure no duplicate or conflicting information
-- Validate memory names are meaningful
+- Check no duplicate or conflicting memories
+- Ensure meaningful memory names
+- Validate content well-formatted
 
-**Context Consistency**:
-- Cross-check with existing memories
-- Identify and resolve conflicts
-- Update related memories if needed
-- Maintain coherent project understanding
+**In-Memoria Validation**:
+- Confirm insights contributed successfully
+- Verify pattern learning updated
+- Check contribution relevance
+- Validate learning status
 
-**Completeness Check**:
-- Ensure all critical discoveries captured
-- Verify checkpoint includes necessary context
-- Check for missing information
-- Confirm session goals documented
+**Cross-MCP Consistency**:
+- Ensure session context aligns with codebase intelligence
+- Verify no conflicting information between MCPs
+- Check complementary data integrity
 
 ### 5. PREPARE - Next Session Readiness
 
 **Context Summary**:
-- Provide overview of saved memories
-- Highlight most important discoveries
-- Flag any incomplete work or blockers
+- Overview of saved Serena memories
+- Highlight key session discoveries
+- Note contributed In-Memoria insights
+- Flag incomplete work or blockers
 - Suggest priorities for next session
 
-**Cleanup Operations**:
-- Remove temporary or obsolete memories
-- Consolidate related memories if appropriate
-- Update memory timestamps
-- Organize memory structure
+**Continuity Setup**:
+- Session memories ready for /load
+- Codebase patterns updated for next session
+- Checkpoint available for recovery
+- Next steps clearly documented
 
-**Continuity Planning**:
-- Identify logical next steps
-- Document any prerequisites for resumption
-- Note any time-sensitive items
-- Prepare session restoration guidance
+## MCP Operations Reference
+
+**Serena MCP** (Session Persistence):
+```
+write_memory(name, content) → Persist session memory
+list_memories() → Show saved memories
+read_memory(name) → Retrieve memory (validation)
+delete_memory(name) → Remove obsolete memory
+```
+
+**In-Memoria MCP** (Codebase Intelligence):
+```
+contribute_insights({ insights, category }) → Feed discoveries to learning
+export_patterns({ path, filter }) → Export learned patterns (optional)
+get_learning_status() → Check contribution status
+```
 
 ## Save Strategies
 
-### Auto-Save (Triggered)
-```
-Automatically save when:
-- 30+ minutes elapsed
-- Major task completion
-- Before /load in new session
-- Significant discovery made
-
-Saves:
-- Session progress
-- Key insights
-- Current state snapshot
-```
-
-### Manual Save (Explicit)
-```
-User requests save:
-- Comprehensive session analysis
-- All discoveries documented
-- Checkpoint created
-- Context prepared for next session
-```
-
-### Quick Save
-```
-Rapid context preservation:
-- Only critical insights
-- Minimal checkpoint data
-- Fast operation (<200ms)
-- Essential continuity only
-```
-
-### Comprehensive Save
-```
-Full session documentation:
-- All discoveries captured
-- Complete checkpoint with recovery data
-- Cross-reference updates
-- Detailed session summary
-```
-
-## Memory Organization
-
-**Memory Naming Conventions**:
-```
-architecture_*: System design and component structure
-pattern_*: Code patterns and conventions
-session_*: Session work and progress
-checkpoint_*: Recovery points
-config_*: Configuration and setup
-decision_*: Technical decisions and rationale
-issue_*: Known issues and workarounds
-```
-
-**Memory Content Structure**:
-```markdown
-# [Memory Title]
-
-## Context
-[When and why this was created]
-
-## Content
-[The actual information to preserve]
-
-## Related
-[Links to related memories or components]
-
-## Notes
-[Additional context or caveats]
-```
-
-## Serena MCP Operations
-
-**Memory Writing**:
-```
-write_memory(memory_name, content)
-→ Persists memory to project
-→ Available in future sessions
-→ Cross-session continuity
-```
-
-**Memory Listing**:
-```
-list_memories()
-→ Shows all saved memories
-→ Helps avoid duplicates
-→ Enables memory management
-```
-
-**Memory Reading** (for validation):
-```
-read_memory(memory_name)
-→ Retrieves saved content
-→ Validates successful save
-→ Checks for conflicts
-```
-
-**Memory Deletion** (cleanup):
-```
-delete_memory(memory_name)
-→ Removes obsolete memories
-→ Keeps memory space clean
-→ Maintains organization
-```
+**Auto-Save**: Triggered every 30+min, task completion, before /load, or significant discovery
+**Manual Save**: Comprehensive analysis, all discoveries in both MCPs, full checkpoint
+**Quick Save**: Critical insights only, essential data, fast (<200ms)
 
 ## Examples
 
 ### Basic Session Save
 ```
 /save
-→ Analyzes session progress
-→ Identifies key discoveries
-→ Creates session memory
+→ Analyzes session progress and insights
+→ Creates Serena session memory
+→ Contributes insights to In-Memoria
 → Auto-checkpoint if >30min
-→ Reports saved context
+→ Reports saved context summary
 ```
 
-### Comprehensive Checkpoint
+### Comprehensive Save with Checkpoint
 ```
 /save --checkpoint --all
 → Complete session analysis
-→ All discoveries documented
+→ Serena: All discoveries documented
+→ In-Memoria: All insights contributed
 → Full checkpoint with recovery data
-→ Cross-session continuity prepared
+→ Pattern export (optional)
 → Detailed summary provided
 ```
 
 ### Discovery Documentation
 ```
-/save "Document authentication pattern"
-→ Focused memory creation
-→ Captures specific insight
-→ Adds to pattern memories
+/save "authentication pattern discovered"
+→ Serena: Focused session memory
+→ In-Memoria: Pattern contribution
 → Updates project understanding
+→ Quick operation completion
 ```
 
-### Session Summary
-```
-/save --summarize
-→ Generates session summary
-→ Documents progress and outcomes
-→ Highlights key learnings
-→ Prepares next session context
-→ No checkpoint created
-```
+## Integration Benefits
 
-## Automatic Save Triggers
-
-**Time-Based**:
-- Every 30 minutes of active work
-- Before session termination
-- After extended idle period
-
-**Event-Based**:
-- Major task completion
-- Before risky operations (rebase, major refactor)
-- Significant discovery made
-- User-initiated checkpoint
-
-**Quality-Based**:
-- When context worth preserving identified
-- After problem resolution
-- New pattern discovered
-- Important decision documented
-
-## Quality Standards
-
-**Memory Quality**:
-- Clear and concise content
-- Well-organized structure
-- Meaningful memory names
-- No redundant information
-
-**Persistence Efficiency**:
-- Fast save operations (<200ms typically)
-- Efficient memory storage
-- No unnecessary duplicates
-- Clean memory organization
-
-**Cross-Session Utility**:
-- Memories enable quick context restoration
-- Insights readily applicable
-- Context accelerates future work
-- Continuity seamlessly maintained
-
-## Integration with Session Lifecycle
-
-**Complete Session Flow**:
-```
-1. /load → Start with full context
-2. Work with project understanding
-3. Discover patterns and insights
-4. Periodic auto-saves (30min)
-5. /save → Explicit session end
-6. Next session: /load → Instant context
-```
-
-**Benefits**:
-- No context lost between sessions
-- Accumulated project knowledge
-- Fast session startup
-- Continuous learning capture
-- Efficient knowledge transfer
+**Dual MCP Persistence**: Serena (session logs/decisions) + In-Memoria (codebase patterns/architecture) = complete context preservation for instant /load restoration and immediate productivity.
 
 ---
 
-**Execute session context persistence now with Serena MCP integration and cross-session continuity.**
+**Execute session persistence now with dual MCP integration for complete cross-session continuity.**

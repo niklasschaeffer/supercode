@@ -28,6 +28,7 @@ The SuperCode framework components will be automatically imported below.
 @token-efficiency.md
 
 # MCP Documentation
+@MCP_In_Memoria.md
 @MCP_Context7.md
 @MCP_Shadcn.md
 @MCP_Morphllm.md

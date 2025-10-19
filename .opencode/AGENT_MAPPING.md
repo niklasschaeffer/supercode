@@ -34,7 +34,7 @@
 - **implement** → (no agent) - multi-domain feature implementation (frontend+backend+security)
 - **test** → quality-engineer (test execution with coverage analysis)
 
-### Session Management (Serena MCP)
+### Session Management (Serena MCP, In-Memoria MCP)
 - **load** → context-gathering (project context loading and initialization)
 - **save** → logging (session persistence and work log consolidation)
 - **reflect** → context-refinement (task reflection, context updates, discovery identification)

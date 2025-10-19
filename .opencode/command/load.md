@@ -1,23 +1,18 @@
 ---
 name: load
-description: Session lifecycle management with Serena MCP integration for project context loading
+description: Session lifecycle management with Serena and In-Memoria MCP integration for context loading
 agent: context-gathering
 ---
 
 # Project Context Loading: $ARGUMENTS
 
-You are loading project context and session state using Serena MCP integration for cross-session persistence and memory management.
+You are loading project context using Serena MCP (session memories) and In-Memoria MCP (codebase intelligence) for complete cross-session restoration.
 
 ## Current Context
 
-**Current Directory**:
-!`pwd`
-
-**Project Structure**:
-@AGENTS.md
-
-**Available Memories**:
-Use Serena MCP `list_memories` to discover existing project memories and session context
+**Current Directory**: !`pwd`
+**Project Structure**: @AGENTS.md
+**Available Memories**: Use Serena MCP `list_memories` and In-Memoria `get_learning_status` to discover context
 
 ## Load Request
 
@@ -25,278 +20,186 @@ Use Serena MCP `list_memories` to discover existing project memories and session
 
 ## Context Loading Protocol
 
-Execute systematic project context loading with Serena MCP integration:
+Execute systematic project loading with dual MCP integration:
 
-### 1. INITIALIZE - Serena MCP Connection
+### 1. INITIALIZE - Dual MCP Connection
 
-**Project Activation**:
-- Use Serena MCP `activate_project` to establish project context
-- Verify Serena MCP connection and memory access
-- Check for existing project configuration and memories
-- Prepare session context for development workflow
+**Serena MCP Activation**:
+- Use `activate_project(project_path)` to establish session context
+- Verify Serena connection and memory access
+- Check for existing session memories and checkpoints
+- Prepare session restoration environment
+
+**In-Memoria MCP Learning**:
+- Use `auto_learn_if_needed({ path: '.' })` to trigger codebase analysis if needed
+- Verify In-Memoria connection and learning status
+- Check if codebase analysis is current
+- Prepare pattern intelligence for session
 
 **Directory Analysis**:
 - Identify project root and structure
-- Detect project type (mono-repo, multi-repo, single project)
-- Discover configuration files and build systems
+- Detect project type and technology stack
+- Discover configuration files
 - Map key directories and entry points
 
-### 2. DISCOVER - Memory Retrieval
+### 2. DISCOVER - Dual Memory Retrieval
 
-**List Available Memories**:
+**Serena MCP - Session Memories**:
 ```
-Use Serena MCP list_memories to discover:
-- Previous session contexts
-- Project architecture insights
-- Development patterns and conventions
-- Technical decisions and rationale
-- Known issues and workarounds
-```
+list_memories()
+→ Previous session contexts
+→ Work logs and progress
+→ Technical decisions
+→ Known issues and workarounds
+→ Checkpoints and recovery points
 
-**Memory Assessment**:
-- Identify relevant memories for current session
-- Prioritize by recency and relevance
-- Check for checkpoint data and recovery points
-- Validate memory integrity and compatibility
-
-### 3. LOAD - Context Establishment
-
-**Memory Loading**:
-```
-For each relevant memory:
-1. Use Serena MCP read_memory to retrieve content
-2. Integrate insights into current session context
-3. Update project understanding
-4. Identify any conflicting or outdated information
+read_memory(memory_name)
+→ Retrieve specific session context
+→ Load checkpoint data if resuming
+→ Integrate session insights
 ```
 
-**Context Types**:
+**In-Memoria MCP - Codebase Intelligence**:
+```
+get_project_blueprint({ path: '.', includeFeatureMap: true })
+→ Architecture overview and component map
+→ Project structure understanding
+→ Technology stack and dependencies
+→ Entry points and key modules
 
-**Project Context**:
-- Architecture and design patterns
-- Module organization and relationships
-- Technology stack and dependencies
-- Build and deployment processes
+get_pattern_recommendations({ includeRelatedFiles: true })
+→ Project-specific patterns and conventions
+→ Naming conventions and style preferences
+→ Common idioms and utilities
+→ Error handling approaches
+```
 
-**Development Context**:
-- Coding conventions and style guides
-- Common patterns and utilities
-- Known issues and workarounds
-- Performance considerations
+### 3. LOAD - Dual Context Establishment
 
-**Session Context**:
-- Previous work and progress
-- Incomplete tasks and blockers
-- Technical decisions made
-- Learning insights captured
+**Session Context** (Serena):
+- Load recent session memories and work logs
+- Restore checkpoint if resuming task
+- Integrate technical decisions made
+- Review known issues and workarounds
+- Identify incomplete work and next steps
+
+**Codebase Context** (In-Memoria):
+```
+predict_coding_approach({
+  problemDescription: "current session goals",
+  includeFileRouting: true
+})
+→ Recommended approach based on learned patterns
+→ File routing suggestions
+→ Pattern application guidance
+→ Consistency recommendations
+
+get_semantic_insights()
+→ Code relationships and dependencies
+→ Architectural patterns in use
+→ Component interactions
+```
 
 ### 4. ACTIVATE - Project Readiness
 
 **Context Integration**:
-- Synthesize loaded memories into coherent project understanding
+- Synthesize Serena session context with In-Memoria codebase intelligence
+- Combine "what we did" (Serena) with "how codebase works" (In-Memoria)
 - Identify knowledge gaps requiring exploration
-- Highlight recent changes or updates
-- Prepare session-specific context
+- Prepare comprehensive session understanding
 
 **Validation**:
 - Verify project structure matches expected patterns
-- Confirm dependencies are available
+- Confirm dependencies available
 - Check for configuration issues
-- Validate memory consistency
+- Validate memory consistency between MCPs
 
 **Readiness Assessment**:
-- Confirm all critical context loaded
+- Confirm all critical context loaded from both MCPs
 - Identify any missing information
 - Flag potential issues or blockers
-- Report context loading status
+- Report dual-context loading status
 
 ### 5. VALIDATE - Session Preparation
 
-**Context Quality Checks**:
+**Context Quality**:
 - Ensure loaded context is current and accurate
-- Verify no conflicting information
+- Verify no conflicting information between MCPs
 - Check for deprecated patterns or outdated decisions
 - Validate cross-session compatibility
 
-**Performance Metrics**:
+**Performance**:
 - Context loading time (<500ms target)
 - Memory retrieval efficiency
-- Project activation speed
-- Session readiness score
+- Pattern learning status
+- Session readiness achieved
 
 **Preparation Complete**:
-- Provide context summary and key insights
-- Highlight important patterns and conventions
+- Provide integrated context summary
+- Highlight session insights (Serena) + codebase patterns (In-Memoria)
 - Flag any issues or concerns
 - Ready for development workflow
 
+## MCP Operations Reference
+
+**Serena MCP** (Session Context):
+```
+activate_project(path) → Establish project context
+list_memories() → Discover saved memories
+read_memory(name) → Retrieve session context
+```
+
+**In-Memoria MCP** (Codebase Intelligence):
+```
+auto_learn_if_needed({ path }) → Trigger learning if needed
+get_project_blueprint({ path, includeFeatureMap }) → Architecture overview
+get_pattern_recommendations({ includeRelatedFiles }) → Load patterns
+predict_coding_approach({ problemDescription, includeFileRouting }) → Get recommendations
+get_semantic_insights() → Code relationships and patterns
+get_learning_status() → Check analysis status
+```
+
 ## Loading Strategies
 
-### Quick Load (Default)
-```
-1. Activate project with Serena MCP
-2. List available memories
-3. Load most recent session context
-4. Provide summary of key insights
-```
-
-### Comprehensive Load
-```
-1. Activate project with full analysis
-2. Load all relevant memories
-3. Synthesize cross-session learnings
-4. Provide detailed context report
-5. Identify patterns and conventions
-```
-
-### Checkpoint Restoration
-```
-1. Identify specific checkpoint to restore
-2. Load checkpoint data and dependencies
-3. Restore session state and progress
-4. Resume from checkpoint point
-```
-
-### Refresh Load
-```
-1. Clear cached context
-2. Re-analyze project structure
-3. Reload all memories fresh
-4. Update stale information
-```
-
-## Context Categories
-
-**Architecture Memories**:
-- System design and component relationships
-- Design decisions and trade-offs
-- Scalability and performance patterns
-- Integration patterns and contracts
-
-**Pattern Memories**:
-- Common code patterns and idioms
-- Framework usage conventions
-- Testing strategies and utilities
-- Error handling approaches
-
-**Session Memories**:
-- Recent work and progress
-- Incomplete tasks and next steps
-- Blockers and issues encountered
-- Insights and discoveries
-
-**Configuration Memories**:
-- Build and deployment setup
-- Environment configuration
-- Tool preferences and settings
-- Workflow optimizations
-
-## Serena MCP Operations
-
-**Project Activation**:
-```
-activate_project(project_path)
-→ Establishes project context
-→ Enables memory operations
-→ Prepares session environment
-```
-
-**Memory Discovery**:
-```
-list_memories()
-→ Returns available memory files
-→ Shows memory metadata
-→ Enables selective loading
-```
-
-**Memory Loading**:
-```
-read_memory(memory_name)
-→ Retrieves memory content
-→ Integrates into session context
-→ Updates project understanding
-```
+**Quick Load** (Default): Serena activates + loads recent session, In-Memoria auto-learns + gets blueprint
+**Comprehensive Load**: Full memory analysis + complete pattern loading with semantic insights
+**Checkpoint Restoration**: Load specific checkpoint + restore exact session state
 
 ## Examples
 
 ### Basic Project Load
 ```
 /load
-→ Activates current directory project
-→ Lists available memories
+→ Serena: Activates project + lists memories
+→ In-Memoria: Auto-learns if needed + loads blueprint
 → Loads recent session context
-→ Reports key insights and patterns
-→ Ready for development workflow
+→ Provides pattern recommendations
+→ Reports integrated context ready
 ```
 
-### Specific Project Load
+### Comprehensive Load with Analysis
 ```
-/load /path/to/project --analyze
-→ Activates specified project path
-→ Performs comprehensive structure analysis
-→ Loads all relevant memories
-→ Provides detailed context report
-→ Highlights important conventions
+/load --analyze
+→ Serena: Full memory analysis + all contexts
+→ In-Memoria: Complete pattern loading + semantic insights
+→ Detailed architecture overview
+→ Coding approach predictions
+→ Comprehensive readiness report
 ```
 
 ### Checkpoint Restoration
 ```
-/load --checkpoint session_2024_01_15_14_30
-→ Identifies checkpoint in memories
-→ Restores session state from checkpoint
-→ Loads associated context and progress
-→ Resumes from saved point
-→ Reports restoration status
+/load --checkpoint checkpoint_2024_01_15_14_30
+→ Serena: Restores specific checkpoint state
+→ In-Memoria: Loads patterns for checkpoint context
+→ Resumes from saved session point
+→ Full context restoration completed
 ```
 
-### Fresh Context Load
-```
-/load --refresh
-→ Clears cached context
-→ Re-analyzes project structure
-→ Reloads memories with fresh perspective
-→ Updates stale information
-→ Provides current project understanding
-```
+## Integration Benefits
 
-## Quality Standards
-
-**Loading Efficiency**:
-- Fast context loading (<500ms for typical projects)
-- Efficient memory retrieval
-- Minimal redundant operations
-- Quick session readiness
-
-**Context Accuracy**:
-- Current and relevant information
-- No conflicting insights
-- Updated patterns and conventions
-- Validated against current state
-
-**Completeness**:
-- All critical context loaded
-- Important patterns identified
-- Key decisions documented
-- Session-ready state achieved
-
-## Integration with Session Lifecycle
-
-**Session Start Flow**:
-```
-1. /load → Activate project and load context
-2. Work on tasks with full project understanding
-3. Periodic checkpoints (automatic or manual)
-4. /save → Persist discoveries and progress
-5. Session end with context preserved
-```
-
-**Cross-Session Benefits**:
-- Instant context restoration
-- No re-learning project structure
-- Preserved insights and decisions
-- Continuous knowledge accumulation
-- Efficient session transitions
+**Dual MCP Context**: Serena ("what we did") + In-Memoria ("how codebase works") = complete understanding for immediate productivity with no re-explaining. Intelligence accumulates over time with each session.
 
 ---
 
-**Execute project context loading now with Serena MCP integration and cross-session persistence.**
+**Execute project context loading now with dual MCP integration for complete session restoration.**

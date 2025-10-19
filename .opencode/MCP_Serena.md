@@ -20,6 +20,7 @@
 ## Works Best With
 - **Morphllm**: Serena analyzes semantic context → Morphllm executes precise edits
 - **Sequential**: Serena provides project context → Sequential performs architectural analysis
+- **In-Memoria**: Serena provides memories and persistence about sessions → In-Memoria provides project context
 
 ## Examples
 ```

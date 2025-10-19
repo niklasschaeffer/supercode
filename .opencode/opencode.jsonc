@@ -12,6 +12,11 @@
       "enabled": true,
       "command": ["npx", "-y", "@upstash/context7-mcp"]
     },
+    "in-memoria": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "in-memoria", "server"]
+    },
     "playwright": {
       "type": "local",
       "enabled": true,
