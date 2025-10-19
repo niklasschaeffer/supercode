@@ -73,6 +73,8 @@ All agents located in `.opencode/agent/`:
 19. **socratic-mentor** - Socratic method educational guidance
 20. **system-architect** - System-level architecture and design decisions
 21. **technical-writer** - Technical documentation, clear communication
+22. **typescript-expert** - TypeScript-specific development expertise
+23. **prompt-engineer** - Prompt-based development expertise
 
 ## Mapping Rationale
 
