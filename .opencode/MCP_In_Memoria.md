@@ -27,7 +27,11 @@
 ## Examples
 ```
 "implement user authentication" → In-Memoria predicts approach based on learned patterns
-# Tools: predict_coding_approach(), get_pattern_recommendations(problemDescription: "Current project context and development patterns")
+# Tools: predict_coding_approach(), 
+
+"get current project context and development patterns"
+- required problemDescription
+# Tools: get_pattern_recommendations({problemDescription: "Current project context and development patterns"})
 
 "find all error handling logic" → In-Memoria semantic search (not grep)
 # Tools: search_codebase({ query: "error handling", semantic: true })

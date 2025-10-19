@@ -67,7 +67,8 @@ get_project_blueprint({ path: '.', includeFeatureMap: true })
 → Technology stack and dependencies
 → Entry points and key modules
 
-get_pattern_recommendations({ includeRelatedFiles: true })
+get_pattern_recommendations({ problemDescription: string })
+→ required problemDescription: for example "current project context and development patterns"
 → Project-specific patterns and conventions
 → Naming conventions and style preferences
 → Common idioms and utilities
@@ -153,7 +154,7 @@ read_memory(name) → Retrieve session context
 ```
 auto_learn_if_needed({ path }) → Trigger learning if needed
 get_project_blueprint({ path, includeFeatureMap }) → Architecture overview
-get_pattern_recommendations({ includeRelatedFiles }) → Load patterns
+get_pattern_recommendations({ problemDescription }) → Load patterns
 predict_coding_approach({ problemDescription, includeFileRouting }) → Get recommendations
 get_semantic_insights() → Code relationships and patterns
 get_learning_status() → Check analysis status
