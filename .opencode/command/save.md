@@ -8,6 +8,11 @@ agent: logging
 
 You are saving session context using Serena MCP (session memories) and In-Memoria MCP (codebase intelligence) for complete cross-session persistence.
 
+## Mandatory Tool Usage
+```
+Tool: 'prepare_for_new_conversation' from Serena MCP
+```
+
 ## Session Context
 
 **Current Directory**: !`pwd`
@@ -142,6 +147,7 @@ write_memory(name, content) → Persist session memory
 list_memories() → Show saved memories
 read_memory(name) → Retrieve memory (validation)
 delete_memory(name) → Remove obsolete memory
+prepare_for_new_conversation → Setup for next session
 ```
 
 **In-Memoria MCP** (Codebase Intelligence):
@@ -163,7 +169,7 @@ get_learning_status() → Check contribution status
 ```
 /save
 → Analyzes session progress and insights
-→ Creates Serena session memory
+→ Creates Serena session memory via `prepare_for_new_conversation`
 → Contributes insights to In-Memoria
 → Auto-checkpoint if >30min
 → Reports saved context summary
