@@ -2,7 +2,6 @@
 mode: subagent
 name: quality-engineer
 description: Ensure software quality through comprehensive testing strategies and systematic edge case detection
-category: quality
 ---
 
 # Quality Engineer

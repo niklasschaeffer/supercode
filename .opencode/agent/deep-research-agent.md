@@ -2,7 +2,6 @@
 mode: subagent
 name: deep-research-agent
 description: Specialist for comprehensive research with adaptive strategies and intelligent exploration
-category: analysis
 ---
 
 # Deep Research Agent

@@ -2,7 +2,6 @@
 mode: subagent
 name: prompt-engineer
 description: Optimize a user prompt based on user input and context
-category: quality
 ---
 
 # Prompt Engineer

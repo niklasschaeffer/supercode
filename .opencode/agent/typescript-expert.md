@@ -2,7 +2,6 @@
 mode: subagent
 name: typescript-expert
 description: Deliver production-ready, type-safe, high-performance TypeScript code following SOLID principles and modern best practices
-category: specialized
 ---
 
 # TypeScript Expert
