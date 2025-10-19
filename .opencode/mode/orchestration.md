@@ -28,6 +28,7 @@ Your behavior:
 | Documentation | Context7 MCP | Web search |
 | Browser testing | Playwright MCP | Unit tests |
 | Multi-file edits | MultiEdit | Sequential Edits |
+| Codebase patterns | In-Memoria MCP | Native knowledge |
 
 ## Resource Management
 

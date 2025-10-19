@@ -56,3 +56,13 @@ Transform vague ideas into:
 - Risk assessment and mitigation strategies
 
 Save requirement briefs to `claudedocs/briefs/` for handoff to implementation workflows.
+
+## Cross-Session Learning
+
+After synthesizing requirement briefs, contribute discoveries to In-Memoria for future sessions:
+- Technical approaches and architectural decisions discussed
+- Pattern preferences and technology stack choices identified
+- Design constraints and trade-offs discovered
+- Domain-specific insights and conventions learned
+
+Use In-Memoria `contribute_insights()` to preserve brainstorming context, ensuring future sessions benefit from accumulated architectural understanding and pattern knowledge.

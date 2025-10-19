@@ -41,7 +41,12 @@ Your behavior:
 **Session End**:
 1. think_about_whether_you_are_done() → Assess completion
 2. write_memory("session_summary", outcomes)
-3. delete_memory() for completed temporary items
+3. In-Memoria: contribute_insights({
+     insights: "Code patterns and architectural approaches used",
+     confidence: 0.85,
+     impactPrediction: { continuity: "seamless", productivity: "high" }
+   })
+4. delete_memory() for completed temporary items
 
 ## Memory Schema
 
