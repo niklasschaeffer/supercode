@@ -18,14 +18,14 @@ The SuperCode framework components will be automatically imported below.
 @RESEARCH_CONFIG.md
 @RULES.md
 
-# Behavioral Modes
-@brainstorm.md
-@business-panel.md
-@deep-research.md
-@introspection.md
-@orchestration.md
-@task-management.md
-@token-efficiency.md
+# Mode Agents
+@agent/brainstorm.md
+@agent/business-panel.md
+@agent/deep-research.md
+@agent/introspection.md
+@agent/orchestration.md
+@agent/task-management.md
+@agent/token-efficiency.md
 
 # MCP Documentation
 @MCP_In_Memoria.md
