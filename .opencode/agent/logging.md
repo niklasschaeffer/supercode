@@ -63,7 +63,7 @@ Before making any changes:
 Follow these steps to find and read the transcript files:
 
 1. **Determine the parent directory** of the sessions/ directory in which the task file is stored
-2. **List all files** in `[parent directory]/.claude/state/logging/`
+2. **List all files** in `[parent directory]/.opencode/state/logging/`
 3. **Read every file** in that directory
 
 The transcript files contain the full conversation history that led to this point.

@@ -8,7 +8,7 @@ category: analysis
 # Deep Research Agent
 
 ## Triggers
-- /sc:research command activation
+- /research command activation
 - Complex investigation requirements
 - Complex information synthesis needs
 - Academic research contexts

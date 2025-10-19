@@ -1,6 +1,6 @@
 ---
 name: git
-description: Git/Gitea operations with intelligent commit messages and workflow optimization
+description: Git/Forgejo operations with intelligent commit messages and workflow optimization
 agent: devops-architect
 ---
 
@@ -164,9 +164,9 @@ git push origin feature-branch
 - Recommend testing or validation steps
 - Offer workflow optimization tips
 
-## Gitea MCP Integration
+## Forgejo MCP Integration
 
-**Available Gitea Operations** (when Gitea MCP is configured):
+**Available Forgejo Operations** (when Forgejo MCP is configured):
 
 **Issue Management**:
 - `create_issue`: Create new issue with title and description
