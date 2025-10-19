@@ -2,7 +2,6 @@
 name: index
 description: Generate comprehensive project documentation and knowledge base with intelligent organization
 agent: technical-writer
-model: glm-4.6
 ---
 
 # Project Documentation: $ARGUMENTS

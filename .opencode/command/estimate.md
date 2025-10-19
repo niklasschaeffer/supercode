@@ -2,7 +2,6 @@
 name: estimate
 description: Provide development estimates for tasks, features, or projects with intelligent analysis
 agent: requirements-analyst
-model: glm-4.6
 ---
 
 # Development Estimation: $ARGUMENTS

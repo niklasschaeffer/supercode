@@ -1,7 +1,6 @@
 ---
 name: implement
 description: Feature and code implementation with intelligent persona activation and MCP integration
-model: glm-4.6
 ---
 
 # Feature Implementation: $ARGUMENTS

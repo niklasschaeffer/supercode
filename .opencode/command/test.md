@@ -2,7 +2,6 @@
 name: test
 description: Execute tests with coverage analysis and automated quality reporting
 agent: quality-engineer
-model: glm-4.6
 ---
 
 # Test Execution: $ARGUMENTS

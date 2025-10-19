@@ -2,7 +2,6 @@
 name: cleanup
 description: Systematically clean up code, remove dead code, and optimize project structure
 agent: refactoring-expert
-model: glm-4.6
 ---
 
 # Code Cleanup: $ARGUMENTS

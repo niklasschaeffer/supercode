@@ -2,7 +2,6 @@
 name: research
 description: Deep web research with adaptive planning and intelligent search
 agent: deep-research-agent
-model: claude-sonnet-4-5
 ---
 
 # Deep Research: $ARGUMENTS

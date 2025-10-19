@@ -2,7 +2,6 @@
 name: brainstorm
 description: Interactive requirements discovery through Socratic dialogue and systematic exploration
 agent: requirements-analyst
-model: claude-sonnet-4-5
 ---
 
 # Requirements Discovery: $ARGUMENTS
