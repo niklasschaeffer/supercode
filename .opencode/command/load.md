@@ -170,21 +170,15 @@ get_learning_status() → Check analysis status
 ### Basic Project Load
 ```
 /load
-→ Serena: Activates project + lists memories
-→ In-Memoria: Auto-learns if needed + loads blueprint
-→ Loads recent session context
-→ Provides pattern recommendations
-→ Reports integrated context ready
+→ Serena: Activates + lists memories | In-Memoria: Auto-learns + blueprint
+→ Loads session context + pattern recommendations → Integrated context ready
 ```
 
-### Comprehensive Load with Analysis
+### Comprehensive Load
 ```
 /load --analyze
-→ Serena: Full memory analysis + all contexts
-→ In-Memoria: Complete pattern loading + semantic insights
-→ Detailed architecture overview
-→ Coding approach predictions
-→ Comprehensive readiness report
+→ Serena: Full memory analysis | In-Memoria: Complete patterns + semantic insights
+→ Architecture overview + coding predictions → Comprehensive readiness report
 ```
 
 ### Checkpoint Restoration

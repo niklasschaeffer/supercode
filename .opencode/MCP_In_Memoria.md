@@ -27,7 +27,7 @@
 ## Examples
 ```
 "implement user authentication" → In-Memoria predicts approach based on learned patterns
-# Tools: predict_coding_approach(), get_pattern_recommendations()
+# Tools: predict_coding_approach(), get_pattern_recommendations(problemDescription: "Current project context and development patterns")
 
 "find all error handling logic" → In-Memoria semantic search (not grep)
 # Tools: search_codebase({ query: "error handling", semantic: true })
@@ -43,4 +43,12 @@
 
 "save coding patterns for team" → In-Memoria export/import
 # Tools: export_patterns(), import_patterns()
+
+"contribute session insights" → Feed discoveries to In-Memoria learning
+# Tools: contribute_insights({
+#   insights: "Session discoveries and patterns observed",
+#   confidence: 0.95,
+#   impactPrediction: { continuity: "seamless", knowledge_transfer: "complete", productivity: "high" }
+# })
+# Response: { success: true, insightId: "insight_...", message: "Insight contributed successfully and pending validation" }
 ```
