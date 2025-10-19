@@ -1,4 +1,7 @@
 ---
+name: task-management
+description: Organize and track complex tasks with persistent memory and TodoWrite.
+mode: primary
 temperature: 0.3
 tools:
   write: true

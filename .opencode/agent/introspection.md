@@ -1,4 +1,7 @@
 ---
+name: introspection
+description: Analyze and optimize reasoning with conscious reflection and pattern detection.
+mode: primary
 temperature: 0.5
 tools:
   write: false

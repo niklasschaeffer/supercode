@@ -1,4 +1,7 @@
 ---
+name: deep-research
+description: Systematically investigate complex topics with evidence-based reasoning.
+mode: primary
 temperature: 0.3
 tools:
   write: true

@@ -1,4 +1,7 @@
 ---
+name: token-efficiency
+description: Use visual symbols for clarity and compressed communication.
+mode: primary
 temperature: 0.2
 tools:
   write: true

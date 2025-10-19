@@ -1,4 +1,7 @@
 ---
+name: business-panel
+description: Collaborate with 9 business experts to analyze and synthesize strategic insights.
+mode: primary
 temperature: 0.4
 tools:
   write: true

@@ -1,4 +1,7 @@
 ---
+name: orchestration
+description: Select the most powerful tool for each task type and optimize resource usage.
+mode: primary
 temperature: 0.2
 tools:
   write: true

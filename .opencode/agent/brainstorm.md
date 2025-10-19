@@ -1,4 +1,7 @@
 ---
+name: brainstorm
+description: Discover and synthesize requirements with collaborative exploration and socratic dialogue.
+agent: primary
 temperature: 0.6
 tools:
   write: true
