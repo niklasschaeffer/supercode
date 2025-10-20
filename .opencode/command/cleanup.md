@@ -14,7 +14,7 @@ You are performing systematic code cleanup to improve codebase hygiene and reduc
 !`git status --short`
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Current Files**:
 !`find . -type f \( -name "*.js" -o -name "*.ts" -o -name "*.py" -o -name "*.go" \) | head -30`

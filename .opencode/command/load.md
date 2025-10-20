@@ -11,7 +11,7 @@ You are loading project context using Serena MCP (session memories) and In-Memor
 ## Current Context
 
 **Current Directory**: !`pwd`
-**Project Structure**: @AGENTS.md
+**Project Structure**: [@AGENTS.md](../AGENTS.md)
 **Available Memories**: Use Serena MCP `list_memories` and In-Memoria `get_learning_status` to discover context
 
 ## Load Request

@@ -20,7 +20,7 @@ You are executing tests with comprehensive coverage analysis and quality reporti
 @package.json
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 ## Test Request
 

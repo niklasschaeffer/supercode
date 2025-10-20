@@ -17,7 +17,7 @@ You are executing a complex task requiring intelligent workflow management, mult
 !`git branch --show-current`
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 ## Task Requirements
 

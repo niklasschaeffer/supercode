@@ -11,7 +11,7 @@ You are designing system architecture, APIs, or component interfaces with compre
 ## Project Context
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Existing Architecture**:
 !`find . -type f \( -name "*.architecture.md" -o -name "design.md" -o -name "*.spec.md" \) 2>/dev/null | head -10`

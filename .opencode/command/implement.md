@@ -19,7 +19,7 @@ You are implementing a feature with intelligent multi-domain coordination and sy
 @package.json
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 ## Implementation Request
 

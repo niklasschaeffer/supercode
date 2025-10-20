@@ -14,7 +14,7 @@ You are performing meta-system task orchestration with intelligent breakdown, de
 !`find . -type f \( -name "*.js" -o -name "*.ts" -o -name "*.py" \) | wc -l`
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Git Status**:
 !`git status --short`

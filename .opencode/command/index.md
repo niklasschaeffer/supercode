@@ -11,7 +11,7 @@ You are generating comprehensive project documentation with intelligent organiza
 ## Project Context
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **README Overview**:
 @README.md

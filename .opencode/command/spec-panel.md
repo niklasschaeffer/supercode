@@ -14,7 +14,7 @@ You are conducting multi-expert specification review using a panel of renowned s
 !`find . -type f \( -name "*.spec.*" -o -name "*.requirement.*" -o -name "*.yml" -o -name "*.yaml" \) | head -20`
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 ## Review Request
 

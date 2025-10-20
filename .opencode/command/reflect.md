@@ -11,7 +11,7 @@ You are performing systematic task reflection and validation using Serena MCP's 
 ## Current Context
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Recent Work**:
 !`git log --oneline -5`

@@ -20,7 +20,7 @@ You are building, compiling, and packaging the project with intelligent error ha
 @package.json
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 ## Build Request
 

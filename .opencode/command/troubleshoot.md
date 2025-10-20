@@ -11,7 +11,7 @@ You are diagnosing and resolving issues through systematic root cause analysis a
 ## System Context
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Recent Git Activity**:
 !`git log --oneline -10`

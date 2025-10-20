@@ -14,7 +14,7 @@ You are generating structured implementation workflows from PRD and feature spec
 !`find . -type f \( -name "*.md" -o -name "*.txt" \) -path "*/PRD/*" -o -path "*/docs/*" | head -20`
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Dependencies**:
 @package.json

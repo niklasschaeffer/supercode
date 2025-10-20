@@ -11,10 +11,10 @@ You are providing clear, educational explanations to enhance understanding of co
 ## Project Context
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Project Overview**:
-@README.md
+[@README.md](../../README.md)
 
 **Target Code** (if file specified):
 @$ARGUMENTS

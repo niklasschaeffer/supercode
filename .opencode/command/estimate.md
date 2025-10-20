@@ -11,7 +11,7 @@ You are providing systematic development estimates with confidence intervals, ri
 ## Project Context
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Codebase Complexity**:
 !`find . -type f \( -name "*.js" -o -name "*.ts" -o -name "*.py" -o -name "*.java" \) ! -path "*/node_modules/*" | wc -l` files

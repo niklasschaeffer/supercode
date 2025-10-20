@@ -14,10 +14,10 @@ You are performing comprehensive code analysis to identify issues and improvemen
 !`find . -type f \( -name "*.js" -o -name "*.ts" -o -name "*.py" -o -name "*.go" -o -name "*.java" \) | head -30`
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Project Overview**:
-@README.md
+[@README.md](../../README.md)
 
 ## Analysis Request
 

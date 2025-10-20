@@ -14,7 +14,7 @@ You are conducting multi-expert business analysis with a panel of renowned busin
 !`find . -type f \( -name "*.pdf" -o -name "*.docx" -o -name "*.md" \) -path "*/business/*" -o -path "*/strategy/*" | head -20`
 
 **Project Overview**:
-@README.md
+[@README.md](../../README.md)
 
 ## Analysis Request
 

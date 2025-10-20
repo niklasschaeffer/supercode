@@ -11,7 +11,7 @@ You are generating and optimizing prompts for AI interactions with expert guidan
 ## Project Context
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Existing Prompts**:
 !`find . -type f \( -name "*.prompt.md" -o -name "*prompt*.md" -o -name "*.opencode.md" \) 2>/dev/null | head -10`

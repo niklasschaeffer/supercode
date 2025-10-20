@@ -17,7 +17,7 @@ You are applying systematic improvements to enhance code quality, performance, a
 !`find . -type f \( -name "*.js" -o -name "*.ts" -o -name "*.py" -o -name "*.go" \) | head -25`
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **Dependencies**:
 @package.json

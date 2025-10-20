@@ -12,7 +12,7 @@ You are facilitating interactive requirements discovery through Socratic dialogu
 
 **Topic/Idea**: $ARGUMENTS
 
-**Project Structure**: @AGENTS.md
+**Project Structure**: [@AGENTS.md](../AGENTS.md)
 
 ## Discovery Protocol
 

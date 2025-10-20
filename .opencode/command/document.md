@@ -11,10 +11,10 @@ You are generating focused, high-quality documentation for code components, APIs
 ## Project Context
 
 **Project Structure**:
-@AGENTS.md
+[@AGENTS.md](../AGENTS.md)
 
 **README Overview**:
-@README.md
+[@README.md](../../README.md)
 
 **Existing Documentation**:
 !`find . -type f -name "*.md" ! -path "*/node_modules/*" ! -path "*/.git/*" | head -15`
