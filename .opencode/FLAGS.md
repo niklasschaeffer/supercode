@@ -34,9 +34,9 @@ Behavioral flags for SuperCode to enable specific execution modes and tool selec
 - Trigger: Complex debugging, system design, multi-component analysis
 - Behavior: Enable Sequential for structured multi-step reasoning and hypothesis testing
 
-**--magic**
-- Trigger: UI component requests (/ui, /21), design system queries, frontend development
-- Behavior: Enable Magic for modern UI generation from 21st.dev patterns
+**--shadcn**
+- Trigger: UI component requests (/ui), design system queries, frontend development
+- Behavior: Enable Shadcn for modern UI generation from shadcn patterns/components
 
 **--morph / --morphllm**
 - Trigger: Bulk code transformations, pattern-based edits, style enforcement

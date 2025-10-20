@@ -19,7 +19,7 @@
 
 ## Works Best With
 - **Context7**: Sequential coordinates analysis → Context7 provides official patterns
-- **Magic**: Sequential analyzes UI logic → Magic implements structured components
+- **Shadcn**: Sequential coordinates analysis → Shadcn provides official patterns/components
 - **Playwright**: Sequential identifies testing strategy → Playwright executes validation
 
 ## Examples
