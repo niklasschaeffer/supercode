@@ -1,3 +1,5 @@
 .idea
 .vscode
 .serena
+.playwright-mcp
+in-memoria.db
