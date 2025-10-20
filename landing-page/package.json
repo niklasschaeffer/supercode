@@ -1,0 +1,17 @@
+{
+  "name": "supercode-landing",
+  "version": "1.0.0",
+  "description": "SuperCode Framework Landing Page",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.11"
+  },
+  "keywords": ["supercode", "ai", "framework", "landing-page"],
+  "author": "SuperCode",
+  "license": "MIT"
+}
