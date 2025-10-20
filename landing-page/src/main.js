@@ -2,6 +2,7 @@ import { content } from './data/content.js'
 import { Header } from './components/header.js'
 import { AnimationController } from './components/animations.js'
 import { LoadingScreen } from './components/loading.js'
+import { CodeBox } from './components/codebox.js'
 
 // DOM Elements
 const featuresGrid = document.getElementById('features-grid')
@@ -9,7 +10,7 @@ const agentsCategories = document.getElementById('agents-categories')
 const docsGrid = document.getElementById('docs-grid')
 
 // State
-let header, animations, loading
+let header, animations, loading, codeBox
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
@@ -59,6 +60,15 @@ function initializeAfterLoading() {
     
     // Update global object for debugging
     window.SuperCodeLanding.header = header
+    
+    // Initialize CodeBox in hero section
+    const heroVisualContainer = document.querySelector('.hero-visual')
+    if (heroVisualContainer) {
+      heroVisualContainer.innerHTML = '<div id="code-box-container"></div>'
+      codeBox = new CodeBox(document.getElementById('code-box-container'))
+      codeBox.init()
+      window.SuperCodeLanding.codeBox = codeBox
+    }
     
     // Render content first, then initialize animations
     renderContent()
